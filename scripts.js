@@ -21,7 +21,7 @@ $(document).ready(function () {
         scrollBar: false,
         easing: 'easeInQuart',
         easingcss3: 'ease',
-        loopBottom: false,
+        loopBottom: true,
         loopTop: false,
         loopHorizontal: true,
         continuousVertical: false,
@@ -59,6 +59,7 @@ $(document).ready(function () {
                 slidesToShow: 1,
                 centerMode: true,
                 variableWidth: true,
+                swipeToSlide: true,
                 responsive: [
                     {
                         breakpoint: 722,
