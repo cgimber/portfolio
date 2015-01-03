@@ -12,6 +12,7 @@ $('.project-carousel').slick({
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    pauseOnHover: false,
     fade: true,
     cssEase: 'linear'
 });
