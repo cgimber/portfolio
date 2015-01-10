@@ -543,6 +543,42 @@ img.icon-social:hover {
 * —––––––––––––– Media Queries —–––––––––––––
 */
 
+@media all and (min-width: 1781px) {
+    .slick-slide {
+        padding: 0 14rem;
+    }
+    img.home {
+        width: 84rem;
+    }
+}
+
+@media all and (max-width: 1780px) and (min-width: 1601px) {
+    .slick-slide {
+        padding: 0 12rem;
+    }
+    img.home {
+        width: 78rem;
+    }
+}
+
+@media all and (max-width: 1600px) and (min-width: 1421px) {
+    .slick-slide {
+        padding: 0 10rem;
+    }
+    img.home {
+        width: 72rem;
+    }
+}
+
+@media all and (max-width: 1420px) and (min-width: 1241px) {
+    .slick-slide {
+        padding: 0 8rem;
+    }
+    img.home {
+        width: 66rem;
+    }
+}
+
 @media all and (max-width: 1240px) and (min-width: 911px) {
     .slick-slide {
         padding: 0 6rem;
