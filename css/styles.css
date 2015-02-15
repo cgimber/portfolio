@@ -598,7 +598,7 @@ img.icon-social:hover {
         margin-bottom: -12rem;
     }
 }
-@media all and (max-width: 1069px) and (min-width: 916px) {
+@media all and (max-width: 1122px) and (min-width: 963px) {
     .greetings {
         font-size: 5rem;
         line-height: 6.3rem;
@@ -642,7 +642,7 @@ img.icon-social:hover {
         right: 2rem;
     }
 }
-@media all and (max-width: 915px) and (min-width: 801px) {
+@media all and (max-width: 962px) and (min-width: 834px) {
     .greetings {
         font-size: 4.2rem;
         line-height: 5.2rem;
@@ -676,7 +676,7 @@ img.icon-social:hover {
         width: 54rem;
     }
 }
-@media all and (max-width: 800px) and (min-width: 600px) {
+@media all and (max-width: 833px) and (min-width: 722px) {
     .greetings {
         font-size: 3.5rem;
         line-height: 4.375rem;
@@ -764,7 +764,7 @@ img.icon-social:hover {
         padding-left: 2rem;
     }
 }
-@media all and (max-width: 599px) and (min-width: 475px) {
+@media all and (max-width: 721px) and (min-width: 592px) {
     .section-about {
         padding: 0 1.5rem;    
     }
@@ -825,7 +825,7 @@ img.icon-social:hover {
         font-size: 5rem;    
     }
 }
-@media all and (max-width: 474px) {
+@media all and (max-width: 591px) {
     .section-about {
         padding: 0 1.5rem;    
     }
