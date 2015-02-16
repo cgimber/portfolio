@@ -104,6 +104,13 @@ p {
     margin-before: 0;
     margin-after: 0;
 }
+div#preloader {
+    background-color: white;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
 nav {
     width: 100%;
     position: fixed;
