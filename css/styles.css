@@ -75,30 +75,6 @@ a {
                         opacity .25s ease-in-out,
                         border-bottom .25s ease-in-out;
 }
-div#load_screen {
-    background: #000;
-    opacity: 1;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 1s ease-in-out;
-    transition-delay: 2s;
-}
-div#load_screen > div#loading img {
-    font-size: 30vw;
-    color: white;
-    position: absolute;
-    width: 100%;
-    max-width: 1280px;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-}
 /*
 img, .slick-slide {
     transition: padding .20s ease-in-out,
