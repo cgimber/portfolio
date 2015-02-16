@@ -1,7 +1,7 @@
-window.addEventListener("load", function() {
-        var load_screen = document.getElementById("load_screen");
-        document.body.removeChild(load_screen);
-    });
+//window.addEventListener("load", function() {
+//        var load_screen = document.getElementById("load_screen");
+//        document.body.removeChild(load_screen);
+//    });
 
 $('.project-carousel').slick({
     infinite: true,
@@ -17,8 +17,8 @@ $('.project-carousel').slick({
     cssEase: 'linear'
 });
 
-var pathArray = window.location.pathname.split('/');
-var secondLevelLocation = pathArray[0];
-console.log(pathArray);
-var url = document.URL.split('#');
-console.log(url);
+//var pathArray = window.location.pathname.split('/');
+//var secondLevelLocation = pathArray[0];
+//console.log(pathArray);
+//var url = document.URL.split('#');
+//console.log(url);
