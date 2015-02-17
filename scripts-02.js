@@ -1,7 +1,13 @@
-$(window).ready(function () {
+$(window).load(function () {
     $('#preloader').fadeOut('slow', function () {
         $(this).remove();
     });
+});
+
+$(window).ready(function () {
+//    $('#preloader').fadeOut('slow', function () {
+//        $(this).remove();
+//    });
 
     $('.project-carousel').slick({
         infinite: true,
