@@ -1,3 +1,11 @@
+//$(window).load(function () {
+//    $('#preloader').fadeOut('slow', function () {
+//        $(this).remove();
+//    });
+//});
+
+$('body').hide().fadeIn('slow');
+
 $('.project-carousel').slick({
     infinite: true,
     speed: 1000,

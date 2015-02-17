@@ -47,33 +47,23 @@ body {
     font-size: 1.6rem;
     font-weight: normal;
 }
-h1, h2, h3, h4, h5, h6, p {
-    -webkit-transition: font-size .5s ease-in-out,
-                        line-height .5s ease-in-out;
-    -moz-transition: font-size .5s ease-in-out,
-                     line-height .5s ease-in-out;
-    -o-transition: font-size .5s ease-in-out,
-                   line-height .5s ease-in-out;
-    transition: font-size .5s ease-in-out,
-                line-height .5s ease-in-out;    
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    -webkit-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
+    -moz-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
+    -o-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
+    transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
 }
 a {
-    -webkit-transition: background-color .25s ease-in-out,
-                        color .25s ease-in-out,
-                        opacity .25s ease-in-out,
-                        border-bottom .25s ease-in-out;
-    -moz-transition: background-color .25s ease-in-out,
-                        color .25s ease-in-out,
-                        opacity .25s ease-in-out,
-                        border-bottom .25s ease-in-out;
-    -o-transition: background-color .25s ease-in-out,
-                        color .25s ease-in-out,
-                        opacity .25s ease-in-out,
-                        border-bottom .25s ease-in-out;
-    transition: background-color .25s ease-in-out,
-                        color .25s ease-in-out,
-                        opacity .25s ease-in-out,
-                        border-bottom .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out, opacity .25s ease-in-out, border-bottom .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out, color .25s ease-in-out, opacity .25s ease-in-out, border-bottom .25s ease-in-out;
+    -o-transition: background-color .25s ease-in-out, color .25s ease-in-out, opacity .25s ease-in-out, border-bottom .25s ease-in-out;
+    transition: background-color .25s ease-in-out, color .25s ease-in-out, opacity .25s ease-in-out, border-bottom .25s ease-in-out;
 }
 /*
 img, .slick-slide {
@@ -81,6 +71,7 @@ img, .slick-slide {
                 width .20s ease-in-out;
 }
 */
+
 h1 {
     font-size: 6rem;
 }
@@ -105,7 +96,6 @@ p {
     margin-after: 0;
 }
 div#preloader {
-    background-color: white;
     height: 100%;
     position: fixed;
     width: 100%;
@@ -186,11 +176,13 @@ a[href^="http://"] {}
 /*
 * ====================== HOME ======================
 */
+
 /*
 #fullpage {
     transition: all .25s linear;
 }
 */
+
 .section-about {
     padding: 0 8rem;
     -webkit-transition: padding .5s ease-in-out;
@@ -206,9 +198,11 @@ a[href^="http://"] {}
     border-bottom: 0.5rem solid #52F2F2;
 }
 .underline-red {
-    border-bottom:0.5rem solid #F25252;
+    border-bottom: 0.5rem solid #F25252;
 }
-a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
+a.underline-resume,
+a.underline-resume:link,
+a.underline-resume:visited {
     text-decoration: none;
     border-bottom: 0.3rem solid black;
     color: black;
@@ -239,13 +233,14 @@ img.home {
     width: 66rem;
     margin-bottom: 1rem;
     box-shadow: rgba(0, 0, 0, 0.2) 1rem 1rem;
-/*    cursor: alias;*/
+    /*    cursor: alias;*/
 }
 /*
 img.home:hover {
     opacity: .9;
 }
 */
+
 /*
 #home-arrows a.previous img {
     width: 2.9rem;
@@ -264,7 +259,8 @@ img.home:hover {
     display: none;
 }
 */
-#home-arrows a.previous{
+
+#home-arrows a.previous {
     width: 0;
     height: 0;
     border-top: 1.4rem solid transparent;
@@ -276,7 +272,7 @@ img.home:hover {
     z-index: 1;
     display: none;
 }
-#home-arrows a.next{
+#home-arrows a.next {
     width: 0;
     height: 0;
     border-top: 1.4rem solid transparent;
@@ -290,13 +286,12 @@ img.home:hover {
 }
 #home-arrows a {
     opacity: .5;
-	filter: alpha(opacity=50);
+    filter: alpha(opacity=50);
 }
 #home-arrows a:hover {
     opacity: 1;
     filter: alpha(opacity=100);
 }
-
 /*
 * —––––––––––––– CSS Arrows —–––––––––––––
 */
@@ -369,7 +364,7 @@ img.home:hover {
 .project-somespacing {
     padding-top: 1rem;
 }
-.project-carousel .slick-slide{
+.project-carousel .slick-slide {
     padding: 0;
 }
 img.process {
@@ -521,7 +516,6 @@ img.icon-social:hover {
     position: absolute;
     top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop))+'rem');
 }
-
 /*
 * —––––––––––––– Media Queries —–––––––––––––
 */
@@ -534,7 +528,6 @@ img.icon-social:hover {
         width: 84rem;
     }
 }
-
 @media all and (max-width: 1780px) and (min-width: 1601px) {
     .slick-slide {
         padding: 0 12rem;
@@ -543,7 +536,6 @@ img.icon-social:hover {
         width: 78rem;
     }
 }
-
 @media all and (max-width: 1600px) and (min-width: 1421px) {
     .slick-slide {
         padding: 0 10rem;
@@ -552,7 +544,6 @@ img.icon-social:hover {
         width: 72rem;
     }
 }
-
 @media all and (max-width: 1420px) and (min-width: 1241px) {
     .slick-slide {
         padding: 0 8rem;
@@ -561,7 +552,6 @@ img.icon-social:hover {
         width: 66rem;
     }
 }
-
 @media all and (max-width: 1240px) and (min-width: 911px) {
     .slick-slide {
         padding: 0 6rem;
@@ -590,12 +580,14 @@ img.icon-social:hover {
         border-bottom: 0.4rem solid #52F2F2;
     }
     .underline-red {
-        border-bottom:0.4rem solid #F25252;
+        border-bottom: 0.4rem solid #F25252;
     }
-    a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.3rem solid black;
-    color: black;
+    a.underline-resume,
+    a.underline-resume:link,
+    a.underline-resume:visited {
+        text-decoration: none;
+        border-bottom: 0.3rem solid black;
+        color: black;
     }
     a.underline-resume:hover,
     a.underline-resume:focus {
@@ -634,12 +626,14 @@ img.icon-social:hover {
         border-bottom: 0.4rem solid #52F2F2;
     }
     .underline-red {
-        border-bottom:0.4rem solid #F25252;
+        border-bottom: 0.4rem solid #F25252;
     }
-    a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.3rem solid black;
-    color: black;
+    a.underline-resume,
+    a.underline-resume:link,
+    a.underline-resume:visited {
+        text-decoration: none;
+        border-bottom: 0.3rem solid black;
+        color: black;
     }
     a.underline-resume:hover,
     a.underline-resume:focus {
@@ -668,12 +662,14 @@ img.icon-social:hover {
         border-bottom: 0.3rem solid #52F2F2;
     }
     .underline-red {
-        border-bottom:0.3rem solid #F25252;
+        border-bottom: 0.3rem solid #F25252;
     }
-    a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.2rem solid black;
-    color: black;
+    a.underline-resume,
+    a.underline-resume:link,
+    a.underline-resume:visited {
+        text-decoration: none;
+        border-bottom: 0.2rem solid black;
+        color: black;
     }
     a.underline-resume:hover,
     a.underline-resume:focus {
@@ -749,7 +745,7 @@ img.icon-social:hover {
 }
 @media all and (max-width: 721px) and (min-width: 592px) {
     .section-about {
-        padding: 0 1.5rem;    
+        padding: 0 1.5rem;
     }
     .greetings {
         font-size: 3.5rem;
@@ -759,12 +755,14 @@ img.icon-social:hover {
         border-bottom: 0.3rem solid #52F2F2;
     }
     .underline-red {
-        border-bottom:0.3rem solid #F25252;
+        border-bottom: 0.3rem solid #F25252;
     }
-    a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.2rem solid black;
-    color: black;
+    a.underline-resume,
+    a.underline-resume:link,
+    a.underline-resume:visited {
+        text-decoration: none;
+        border-bottom: 0.2rem solid black;
+        color: black;
     }
     a.underline-resume:hover,
     a.underline-resume:focus {
@@ -782,7 +780,7 @@ img.icon-social:hover {
         width: 100vw;
     }
     nav {
-        padding: 0 1.5rem;    
+        padding: 0 1.5rem;
     }
     nav li {
         padding-left: 5rem;
@@ -796,7 +794,7 @@ img.icon-social:hover {
 }
 @media all and (max-width: 560px) {
     #project-tags {
-        display: none;    
+        display: none;
     }
     .page-wrap {
         margin-left: 1.5rem;
@@ -805,12 +803,12 @@ img.icon-social:hover {
 }
 @media all and (max-width: 489px) {
     #footer h1 {
-        font-size: 5rem;    
+        font-size: 5rem;
     }
 }
 @media all and (max-width: 591px) {
     .section-about {
-        padding: 0 1.5rem;    
+        padding: 0 1.5rem;
     }
     .greetings {
         font-size: 3.5rem;
@@ -820,12 +818,14 @@ img.icon-social:hover {
         border-bottom: 0.3rem solid #52F2F2;
     }
     .underline-red {
-        border-bottom:0.3rem solid #F25252;
+        border-bottom: 0.3rem solid #F25252;
     }
-    a.underline-resume, a.underline-resume:link, a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.2rem solid black;
-    color: black;
+    a.underline-resume,
+    a.underline-resume:link,
+    a.underline-resume:visited {
+        text-decoration: none;
+        border-bottom: 0.2rem solid black;
+        color: black;
     }
     a.underline-resume:hover,
     a.underline-resume:focus {
@@ -843,7 +843,7 @@ img.icon-social:hover {
         width: 100vw;
     }
     nav {
-        padding: 0 1.5rem;    
+        padding: 0 1.5rem;
     }
     nav li {
         padding-left: 2rem;
