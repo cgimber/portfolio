@@ -4,7 +4,7 @@
 //    });
 //});
 
-$('body').hide()
+$('body').hide();
 
 $(window).load(function () {
     $('body').fadeIn('slow');
