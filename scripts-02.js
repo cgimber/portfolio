@@ -4,7 +4,11 @@
 //    });
 //});
 
-$('body').hide().fadeIn('slow');
+$('body').hide()
+
+$(window).load(function () {
+    $('body').fadeIn('slow');
+});
 
 $('.project-carousel').slick({
     infinite: true,
