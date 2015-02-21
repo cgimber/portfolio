@@ -81,16 +81,6 @@ $(document).ready(function () {
 
     $('[data-typer-targets]').typer();
 
-    // This function is now called in fullpage's afterRender ^^^   
-    //	$('.variable-width').slick({
-    //        infinite: true,
-    //        speed: 500,
-    //        slidesToShow: 1,
-    //        centerMode: true,
-    //        variableWidth: true
-    //    }); 
-
-
     //var pathArray = window.location.pathname.split( '/' );
     //var secondLevelLocation = pathArray[0];
     //console.log(pathArray);
