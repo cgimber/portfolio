@@ -88,6 +88,10 @@ $(document).ready(function () {
 
             if (section == "about") {
                 $('#about-link').addClass('active');
+            } else if ($('ul#section-links a').hasClass('active')) {
+                console.log("hey");
+            } else {
+                $('#about-link').addClass('active');
             }
 
         },

@@ -325,11 +325,13 @@ img.home {
 		}
 */
 
+/*
 .key:active {
     color: #888;
     background: #ebeced;
     margin: 2px 3px 0 0;
 }
+*/
 
 @-webkit-keyframes keypress {
   0%   { color: #bbb; background: #fafafa; }
