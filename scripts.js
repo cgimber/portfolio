@@ -5,7 +5,7 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
-    
+
     $('#fullpage').fullpage({
         //Navigation
         menu: false,
@@ -52,7 +52,18 @@ $(document).ready(function () {
 
         //events
         onLeave: function (index, nextIndex, direction) {},
-        afterLoad: function (anchorLink, index) {},
+        afterLoad: function (anchorLink, index) {
+            var section = document.URL.split('#')[1];
+            console.log("section = " + section);
+
+            if (section == "about") {
+                $('ul#section-links a').removeClass('active');
+                $('#about-link').addClass('active');
+            } else if ((section == "bb14") || (section == "juggle") || (section == "ageago") || (section == "foodtrucksofla") || (section == "hg")) {
+                $('ul#section-links a').removeClass('active');
+                $('#work-link').addClass('active');
+            }
+        },
         afterRender: function () {
 
             $('.variable-width').slick({
@@ -73,6 +84,12 @@ $(document).ready(function () {
 
             });
 
+            var section = document.URL.split('#')[1];
+
+            if (section == "about") {
+                $('#about-link').addClass('active');
+            }
+
         },
         afterResize: function () {},
         afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {},
@@ -81,26 +98,11 @@ $(document).ready(function () {
 
     $('[data-typer-targets]').typer();
 
-    //var pathArray = window.location.pathname.split( '/' );
-    //var secondLevelLocation = pathArray[0];
-    //console.log(pathArray);
-    //var url=document.URL.split('#');    
-    //console.log(url);
-
-
-    //$('body').toggleClass('.active', ($('body').hasClass('.fp-viewing-about')));
-
-    //    $('.active').removeClass('active');   
-    //    $('nav a[href^="#' + document.URL.split("#")[1] + '"]').addClass('active');
-
-
-    //    function footerReveal() {
-    //        if ($(.last-section).offset().top = 0) {
-    //            $("#footer").animate({
-    //                scrollTop: fst + "px"
-    //            })
-    //        }
-    //    };
+    // hide modal after keypress event    
+    $('body').keydown(function (e) {
+        $('.modal').fadeOut();
+        $('.modal').hide();
+    });
 
     $("body").keydown(function (e) {
         switch (e.keyCode) {
@@ -112,19 +114,16 @@ $(document).ready(function () {
             $('.variable-width').slickPrev();
             break;
 
-        case 38: // up
-            prevSection();
-            break;
-
-        case 40: // down
-            footerReveal();
-            break;
+            //        case 38: // up
+            //            //prevSection();
+            //            break;
+            //
+            //        case 40: // down
+            //            //footerReveal();
+            //            break;
         }
     });
-    // mobile displays all three slides in stack    
-    //    if ($(window).width() < 600) {
-    //        $('.variable-width').unslick();
-    //    }
+
 });
 
 // mobile displays all three slides in stack 
@@ -132,81 +131,4 @@ $(document).ready(function () {
 //        if ($(window).width() < 600) {
 //            $('.variable-width').unslick();
 //        }
-//});
-
-//    function nextSection() {
-//        var st = $('body').scrollTop();
-//        var fst = $('#footer').offset().top;
-//        var found = false;
-//        for (var i=0; i<sections.length; i++) {
-//            var t = $(sections[i]).offset().top;                    
-//            if(t-st > 0) {
-//                found = true;
-//                $("html, body").animate({
-//                    scrollTop: t + "px"
-//                })
-//                break;
-//            }
-//        }        
-////        if (!found && fst - st > 10) {
-////            $("html, body").animate({
-////                scrollTop: fst + "px"
-////            })
-////        }
-//        
-////        if ($(.last-section).offset().top = 0) {
-////            $("html, body").animate({
-////                scrollTop: fst + "px"
-////            })
-////        }
-//    }
-
-//    function prevSection() {
-//        var st = $('body').scrollTop();
-//        var found = -999999;
-//        var foundIndex = 0;
-//        for (var i=0; i<sections.length; i++) {
-//            var t = $(sections[i]).offset().top;                    
-//            var diff = t - st;
-//            if(diff > found && diff < 0) {
-//                found = diff;
-//                foundIndex = i;
-//            }
-//        }
-//
-//        $("html, body").animate({
-//            scrollTop: $(sections[foundIndex]).offset().top + "px"
-//        }); 
-//    }
-//    
-//});
-
-
-//$(function(){
-//       $("a").each(function(){
-//               if ($(this).attr("href") == window.location.pathname){
-//                       $(this).addClass("active");
-//               }
-//       });
-//});
-
-
-//$('#work').waypoint(function () {
-//        $('.active').removeClass('active');
-//        $('#work-link').addClass('active');
-//        console.log("class added");
-//    });
-
-/*---Make an enter function from these scraps?---*/
-
-//var pathArray = window.location.pathname.split('/');
-//var secondLevelLocation = pathArray[0];
-//console.log(pathArray);
-//var url = document.URL.split('#');
-//console.log(url);
-//    
-//$(document).ready(function(){
-//	$("#demosMenu").change(function(){
-//	  window.location.href = $(this).find("option:selected").attr("id") + '.html';
-//	});
 //});

@@ -4,8 +4,8 @@
 <head>
     <title>CHRISTIAN GIMBER</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.fullpage/2.5.0/jquery.fullPage.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
@@ -41,14 +41,14 @@
                 </g>
             </svg>
         </a>
-        <ul>
-            <li class="page">
+        <ul id="section-links">
+            <li>
                 <h3><a href="#about" id="about-link">About</a></h3>
             </li>
-            <li class="page">
+            <li>
                 <h3><a href="#bb14" id="work-link">Work</a></h3>
             </li>
-            <li class="page">
+            <li>
                 <h3><a href="mailto:csgimber@gmail.com" id="contact-link">Contact</a></h3>
             </li>
         </ul>
@@ -88,15 +88,17 @@
                     </a>
                 </div>
             </div>
-            <!--<h3>use arrow keys</h3>-->
-<!--
-            <ul id="home-keys">
-                <li><a class="up" href="#"><span class="key fa fa-caret-up"></span></a></li>
-                <li><a class="right" href="#"><span class="key fa fa-caret-right"></span></a></li>
-                <li><a class="down" href="#"><span class="key fa fa-caret-down"></span></a></li>
-                <li><a class="left" href="#"><span class="key fa fa-caret-left"></span></a></li>
-            </ul>
--->
+            <div class="modal">
+                <h3 id="nav-directions">Browse projects <br><br><br><br><br><br>with arrow keys</h3>
+
+                <ul id="home-keys">
+                    <li><span class="key up fa fa-caret-up"></span></li>
+                    <li><span class="key right fa fa-caret-right "></span></li>
+                    <li><span class="key down fa fa-caret-down"></span></li>
+                    <li><a class="left" href="#"><span class="key fa fa-caret-left"></span></a></li>
+                </ul>
+
+            </div>
         </div>
         <div class="section">
             <div class="variable-width">
@@ -198,9 +200,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!--- fullPage -->
-    <script src="//cdn.jsdelivr.net/jquery.fullpage/2.5.0/vendors/jquery.easings.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jquery.fullpage/2.5.0/vendors/jquery.slimscroll.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jquery.fullpage/2.5.0/jquery.fullPage.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.easings.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.slimscroll.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/jquery.fullPage.min.js"></script>
 
     <!--- Slick -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
