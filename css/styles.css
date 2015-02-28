@@ -324,6 +324,8 @@ img.home {
     100% {
         color: #888;
         background: #ebeced;
+        -webkit-transform: translateX(1px) translateY(2px);
+        -moz-transform: translateX(1px) translateY(2px);
         transform: translateX(1px) translateY(2px);
     }
 }
@@ -335,6 +337,8 @@ img.home {
     100% {
         color: #888;
         background: #ebeced;
+        -webkit-transform: translateX(1px) translateY(2px);
+        -moz-transform: translateX(1px) translateY(2px);
         transform: translateX(1px) translateY(2px);
     }
 }
@@ -346,6 +350,8 @@ img.home {
     100% {
         color: #888;
         background: #ebeced;
+        -webkit-transform: translateX(1px) translateY(2px);
+        -moz-transform: translateX(1px) translateY(2px);
         transform: translateX(1px) translateY(2px);
     }
 }
@@ -357,6 +363,8 @@ img.home {
     100% {
         color: #888;
         background: #ebeced;
+        -webkit-transform: translateX(1px) translateY(2px);
+        -moz-transform: translateX(1px) translateY(2px);
         transform: translateX(1px) translateY(2px);
     }
 }
@@ -364,37 +372,37 @@ img.home {
     position: absolute;
     left: 1.5rem;
     top: 7rem;
-    -webkit-animation: keypress .5s 0s infinite alternate;
-    -moz-animation: keypress .5s 0s infinite alternate;
-    -o-animation: keypress .5s 0s infinite alternate;
-    animation: keypress .5s 0s infinite alternate;
+    -webkit-animation: keypress .6s 0s infinite alternate;
+    -moz-animation: keypress .6s 0s infinite alternate;
+    -o-animation: keypress .6s 0s infinite alternate;
+    animation: keypress .6s 0s infinite alternate;
 }
 .right {
     position: absolute;
     right: 1.5rem;
     top: 7rem;
-    -webkit-animation: keypress .5s 0s infinite alternate;
-    -moz-animation: keypress .5s 0s infinite alternate;
-    -o-animation: keypress .5s 0s infinite alternate;
-    animation: keypress .5s 0s infinite alternate;
+    -webkit-animation: keypress .6s 0.15s infinite alternate;
+    -moz-animation: keypress .6s 0.15s infinite alternate;
+    -o-animation: keypress .6s 0.15s infinite alternate;
+    animation: keypress .6s 0.15s infinite alternate;
 }
 .top {
     position: absolute;
     left: 11.3rem;
     top: 0rem;
-    -webkit-animation: keypress .5s .5s infinite alternate;
-    -moz-animation: keypress .5s .5s infinite alternate;
-    -o-animation: keypress .5s .5s infinite alternate;
-    animation: keypress .5s .5s infinite alternate;
+    -webkit-animation: keypress .6s 0.3s infinite alternate;
+    -moz-animation: keypress .6s 0.3s infinite alternate;
+    -o-animation: keypress .6s 0.3s infinite alternate;
+    animation: keypress .6s 0.3s infinite alternate;
 }
 .down {
     position: absolute;
     left: 11.3rem;
     top: 7rem;
-    -webkit-animation: keypress .5s .5s infinite alternate;
-    -moz-animation: keypress .5s .5s infinite alternate;
-    -o-animation: keypress .5s .5s infinite alternate;
-    animation: keypress .5s .5s infinite alternate;
+    -webkit-animation: keypress .6s 0.45s infinite alternate;
+    -moz-animation: keypress .6s 0.45s infinite alternate;
+    -o-animation: keypress .6s 0.45s infinite alternate;
+    animation: keypress .6s 0.45s infinite alternate;
 }
 /*
 * —––––––––––––– CSS Arrows —–––––––––––––
