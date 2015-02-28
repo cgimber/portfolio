@@ -105,7 +105,7 @@ $(document).ready(function () {
     // hide modal after keypress event    
     $('body').keydown(function (e) {
         $('.modal').fadeOut();
-        $('.modal').hide();
+//        $('.modal').hide();
     });
 
     $("body").keydown(function (e) {

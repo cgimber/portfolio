@@ -230,11 +230,9 @@ a.underline-resume:focus {
     padding: 0 8.5rem;
     pointer-events: none;
 }
-
 .slick-slide.slick-active {
     pointer-events: all;
 }
-
 .slick-active img.home:hover,
 .slick-active img.home:focus {
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
@@ -253,17 +251,15 @@ img.home {
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
 }
-
 .modal {
-/*    display: none;*/
+    /*    display: none;*/
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.95);
+    background-color: rgba(0, 0, 0, .85);
     padding: 0 1em;
 }
-
 .modal #nav-directions {
     color: white;
     position: absolute;
@@ -277,53 +273,40 @@ img.home {
     text-transform: uppercase;
     letter-spacing: .125rem;
 }
-
 /* Styles for the keyboard arrows */
 
 #home-keys {
     list-style: none;
-    width: 27.5rem;
-    height: 7rem;
+    width: 32rem;
+    height: 12.7rem;
     position: absolute;
-    top: 52%;
+    top: 53%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-52%);
-    -moz-transform: translateX(-50%) translateY(-52%);
-    transform: translateX(-50%) translateY(-52%);
+    -webkit-transform: translateX(-50%) translateY(-53%);
+    -moz-transform: translateX(-50%) translateY(-53%);
+    transform: translateX(-50%) translateY(-53%);
     display: block;
+    /*    background: blue;*/
+}
 
-/*    background: blue;*/
-}
-#home-keys li {
-    display: inline-block;
-}
-#home-keys li:first-child {
-    margin-left: 7.5rem;
-    position: absolute;
-}
 .key {
-    font-size: 2rem;
+    font-size: 4rem;
     display: inline-block;
     color: #bbb;
     text-align: center;
-    padding: .4rem 1.75rem;
+    padding: .8rem 3.5rem;
     background: #fafafa;
-    -moz-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 0.2);
-    box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
+    -webkit-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
+    box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
     /*			text-shadow: 0px 1px 1px #fff;*/
-/*
+    /*
     -webkit-transition-property: none;
     -moz-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
     -o-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
     transition-property: none;
 */
 }
-/*
-		.key:hover {
-			background: #fefefe;
-		}
-*/
 
 /*
 .key:active {
@@ -334,57 +317,84 @@ img.home {
 */
 
 @-webkit-keyframes keypress {
-  0%   { color: #bbb; background: #fafafa; }
-  100% { color: #888; background: #ebeced; transform: translateX(1px) translateY(2px); }
+    0% {
+        color: #bbb;
+        background: #fafafa;
+    }
+    100% {
+        color: #888;
+        background: #ebeced;
+        transform: translateX(1px) translateY(2px);
+    }
 }
 @-moz-keyframes keypress {
-  0%   { color: #bbb; background: #fafafa; }
-  100% { color: #888; background: #ebeced; transform: translateX(1px) translateY(2px); }
+    0% {
+        color: #bbb;
+        background: #fafafa;
+    }
+    100% {
+        color: #888;
+        background: #ebeced;
+        transform: translateX(1px) translateY(2px);
+    }
 }
 @-o-keyframes keypress {
-  0%   { color: #bbb; background: #fafafa; }
-  100% { color: #888; background: #ebeced; transform: translateX(1px) translateY(2px); }
+    0% {
+        color: #bbb;
+        background: #fafafa;
+    }
+    100% {
+        color: #888;
+        background: #ebeced;
+        transform: translateX(1px) translateY(2px);
+    }
 }
 @keyframes keypress {
-  0%   { color: #bbb; background: #fafafa; }
-  100% { color: #888; background: #ebeced; transform: translateX(1px) translateY(2px); }
+    0% {
+        color: #bbb;
+        background: #fafafa;
+    }
+    100% {
+        color: #888;
+        background: #ebeced;
+        transform: translateX(1px) translateY(2px);
+    }
 }
-
 .left {
     position: absolute;
-    left: 6rem;
-    top: 3.75rem;
+    left: 1.5rem;
+    top: 7rem;
     -webkit-animation: keypress .5s 0s infinite alternate;
     -moz-animation: keypress .5s 0s infinite alternate;
     -o-animation: keypress .5s 0s infinite alternate;
-    animation: keypress .5s 0s infinite alternate;   
+    animation: keypress .5s 0s infinite alternate;
 }
 .right {
     position: absolute;
-    left: 17.5rem;
-    top: 3.75rem;
+    right: 1.5rem;
+    top: 7rem;
     -webkit-animation: keypress .5s 0s infinite alternate;
     -moz-animation: keypress .5s 0s infinite alternate;
     -o-animation: keypress .5s 0s infinite alternate;
-    animation: keypress .5s 0s infinite alternate;    
+    animation: keypress .5s 0s infinite alternate;
 }
 .top {
     position: absolute;
-    left: 11.5rem;
-    top: 0;
+    left: 11.3rem;
+    top: 0rem;
     -webkit-animation: keypress .5s .5s infinite alternate;
     -moz-animation: keypress .5s .5s infinite alternate;
     -o-animation: keypress .5s .5s infinite alternate;
-    animation: keypress .5s .5s infinite alternate;   
+    animation: keypress .5s .5s infinite alternate;
 }
 .down {
     position: absolute;
-    left: 11.5rem;
-    top: 3.75rem;
+    left: 11.3rem;
+    top: 7rem;
     -webkit-animation: keypress .5s .5s infinite alternate;
     -moz-animation: keypress .5s .5s infinite alternate;
     -o-animation: keypress .5s .5s infinite alternate;
-    animation: keypress .5s .5s infinite alternate;        
+    animation: keypress .5s .5s infinite alternate;
 }
 /*
 * —––––––––––––– CSS Arrows —–––––––––––––
@@ -613,6 +623,22 @@ img.icon-social:hover {
 /*
 * —––––––––––––– Media Queries —–––––––––––––
 */
+
+/* Hide arrow key modal on mobile */
+
+@media only screen and (min-device-width: 320px) and (orientation: portrait),
+(max-device-width: 1024px) and (orientation: landscape) {
+    .modal {
+        display: none;
+    }
+}
+@media only screen and (min-device-width: 320px) and (orientation: portrait),
+(max-device-width: 768px) and (orientation: portrait) {
+    .modal {
+        display: none;
+    }
+}
+/* Desktop queries */
 
 @media all and (min-width: 1781px) {
     .slick-slide {
