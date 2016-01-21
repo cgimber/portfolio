@@ -185,6 +185,7 @@ a[href^="http://"] {}
 
 .section-about {
     padding: 0 8rem;
+    color: white;
     -webkit-transition: padding .5s ease-in-out;
     -moz-transition: padding .5s ease-in-out;
     -o-transition: padding .5s ease-in-out;
@@ -204,14 +205,14 @@ a.underline-resume,
 a.underline-resume:link,
 a.underline-resume:visited {
     text-decoration: none;
-    border-bottom: 0.3rem solid black;
-    color: black;
+    border-bottom: 0.3rem solid white;
+    color: white;
 }
 a.underline-resume:hover,
 a.underline-resume:focus {
-    background-color: black;
-    border-bottom: 0.3rem solid white;
-    color: white;
+    background-color: white;
+    border-bottom: 0.3rem solid black;
+    color: black;
 }
 #resume {
     text-align: left;
@@ -474,7 +475,7 @@ img.home {
     padding-top: 4rem;
 }
 .project-somespacing {
-    padding-top: 1rem;
+    padding-top: 1rem !important;
 }
 .project-carousel .slick-slide {
     padding: 0;

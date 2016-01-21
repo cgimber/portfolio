@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('#fullpage').fullpage({
         //Navigation
         menu: false,
-        anchors: ['about', 'bb14', 'juggle', 'ageago', 'foodtrucksofla', 'hg'],
+        anchors: ['about', 'bb14', 'juggle', 'ageago', 'localsonly', 'sozo'],
         //        navigation: false,
         //        navigationPosition: 'right',
         //        navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -40,7 +40,7 @@ $(document).ready(function () {
         controlArrows: true,
         verticalCentered: true,
         resize: true,
-        sectionsColor: ['#f4f4f4', '#3F3F3F', '#14A697', '#f2bb13', '#F29D35', '#F27649', '#F25252'],
+        sectionsColor: ['#1a1a1a', '#3F3F3F', '#14A697', '#f2bb13', '#F29D35', '#f25151', '#F25252'], 
         paddingTop: '80px',
         //        paddingBottom: '0px',
         //        fixedElements: '#header, .footer',
@@ -54,12 +54,12 @@ $(document).ready(function () {
         onLeave: function (index, nextIndex, direction) {},
         afterLoad: function (anchorLink, index) {
             var section = document.URL.split('#')[1];
-            console.log("section = " + section);
+            // console.log("section = " + section);
 
             if (section == "about") {
                 $('ul#section-links a').removeClass('active');
                 $('#about-link').addClass('active');
-            } else if ((section == "bb14") || (section == "juggle") || (section == "ageago") || (section == "foodtrucksofla") || (section == "hg")) {
+            } else if ((section == "bb14") || (section == "juggle") || (section == "ageago") || (section == "localsonly") || (section == "sozo")) {
                 $('ul#section-links a').removeClass('active');
                 $('#work-link').addClass('active');
             }
@@ -100,12 +100,12 @@ $(document).ready(function () {
         onSlideLeave: function (anchorLink, index, slideIndex, direction) {}
     });
 
-    $('[data-typer-targets]').typer();
+    // $('[data-typer-targets]').typer();
+    $('[data-typer-targets]').OrderlyTyper();
 
     // hide modal after keypress event    
     $('body').keydown(function (e) {
         $('.modal').fadeOut();
-//        $('.modal').hide();
     });
 
     $("body").keydown(function (e) {
@@ -117,14 +117,6 @@ $(document).ready(function () {
         case 37: // left
             $('.variable-width').slickPrev();
             break;
-
-            //        case 38: // up
-            //            //prevSection();
-            //            break;
-            //
-            //        case 40: // down
-            //            //footerReveal();
-            //            break;
         }
     });
 
