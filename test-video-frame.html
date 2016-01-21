@@ -1,0 +1,75 @@
+<!doctype html>
+<html style="background: #f25151">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    #device-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #device-container .iphone6 {
+        position: relative;
+        padding: 0;
+        margin: 20px;
+        padding: 105px 45px;
+        display: inline-block;
+        width: 360px;
+        height: 690px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-size: 360px 690px;
+    }
+    
+    .iphone6--wht {
+        background: url("assets/device-frames/iphone-shell-flat-wht@1x.png") no-repeat;
+    }
+    
+    .iphone6--blk {
+        background: url("assets/device-frames/iphone-shell-flat-blk@1x.png") no-repeat;
+    }
+    
+    #device-container .iphone6 video {
+        width: 100%;
+        height: 100%;
+    }
+    
+    video {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="device-container">
+        <div class="iphone6 iphone6--wht">
+            <!-- Video Partial -->
+            <!--[if IE]><video preload="auto" style="background-image: url(assets/device-frames/iphone-shell-flat-wht@1x.png);" loop muted> <source src="assets/sozo/project/sozo-v3-demo.webm" type="video/webm; codecs=vp9, opus"> <source src="assets/sozo/project/sozo-v3-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2"></video><![endif]-->
+            <!--[if !IE]-->
+            <video preload="auto" autoplay loop muted>
+                <source src="assets/sozo/project/sozo-v3-demo.webm" type="video/webm; codecs=vp9, opus">
+                <source src="assets/sozo/project/sozo-v3-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2">
+            </video>
+            <!--[endif]-->
+        </div>
+        <div class="iphone6 iphone6--blk">
+            <!-- Video Partial -->
+            <!--[if IE]><video preload="auto" style="background-image: url("assets/device-frames/iphone-shell-flat-blk@1x.png");" loop muted> <source src="assets/sozo/project/sozo-tab-demo.webm" type="video/webm; codecs=vp9, opus"> <source src="assets/sozo/project/sozo-tab-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2"></video><![endif]-->
+            <!--[if !IE]-->
+            <video preload="auto" autoplay loop muted>
+                <source src="assets/sozo/project/sozo-tab-demo.webm" type="video/webm; codecs=vp9, opus">
+                <source src="assets/sozo/project/sozo-tab-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2">
+            </video>
+            <!--[endif]-->
+        </div>
+    </div>
+</body>
+
+</html>
