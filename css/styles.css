@@ -266,23 +266,38 @@ a.underline-resume:focus {
     display: block;
 }
 
-.slick-slide {
-    /*    width: 660px;*/
-    padding: 0 8.5rem;
-    pointer-events: none;
+.gallery-cell {
+    /*width: 50%;*/
+    padding: 0 4.16%;
 }
 
-.slick-slide.slick-active {
-    pointer-events: all;
+.is-selected {
+
 }
 
-.slick-active img.home:hover,
-.slick-active img.home:focus {
+.is-previous, .is-next {
+    /*pointer-events: none;*/
+}
+
+.is-previous img.home:hover,
+.is-previous img.home:focus {
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
-    cursor: url(http://christiangimber.com/assets/cursor-plus-03.png) 20 20, cell;
+    cursor: url(/assets/cursor-previous-01.png) 20 20, cell;
 }
 
-.slick-active img.home:active {
+.is-selected img.home:hover,
+.is-selected img.home:focus {
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
+    cursor: url(/assets/cursor-plus-03.png) 20 20, cell;
+}
+
+.is-next img.home:hover,
+.is-next img.home:focus {
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
+    cursor: url(/assets/cursor-next-01.png) 20 20, cell;
+}
+
+img.home:active {
     -moz-transform: translateX(3px) translateY(3px);
     -webkit-transform: translateX(3px) translateY(3px);
     transform: translateX(3px) translateY(3px);
