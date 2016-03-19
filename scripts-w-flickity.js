@@ -5,7 +5,6 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
-
     var section;
     var gallery;
     var slideLinks = $('a.gallery-link');
@@ -97,7 +96,8 @@ $(document).ready(function() {
 
     $('[data-typer-targets]').OrderlyTyper();
 
-    // navigate slides with arrow keys
+    /* navigate slides with arrow keys
+    --------------------------------------------------------------*/
     var changeSlide = debounce(function(e) {
         switch (e.keyCode) {
             case 37: // LEFT
@@ -112,7 +112,9 @@ $(document).ready(function() {
 
     $('body').keydown(changeSlide);
 
-    // update hrefs for each slide
+
+    /* update hrefs for each slide
+    --------------------------------------------------------------*/
     function updateSlideLinks() {
         slideLinks.each(function() {
             var slide = this.offsetParent;
@@ -124,29 +126,31 @@ $(document).ready(function() {
     }
 
     $(gallery).on('cellSelect', function() {
-        window.setTimeout(function() {
-            updateSlideLinks();
-        }, 1);
+        window.setTimeout(updateSlideLinks, 1);
     });
 
-    // check for slide specific click behaviour
+    /* slide specific click behaviour
+    --------------------------------------------------------------*/
     $('img.home').click(function() {
         var clickedSlide = this.offsetParent;
 
         if ($(clickedSlide).hasClass('is-selected')) {
             // follow link to project page
-        } else if ($(clickedSlide).hasClass('is-previous')) {
-            // go to previous slide
-            gallery.flickity('previous', true);
         } else if ($(clickedSlide).hasClass('is-next')) {
             // go to next slide
             gallery.flickity('next', true);
+            // remove focus from gallery
+            setTimeout(function() { $('.gallery').blur(); }, 1);
+        } else if ($(clickedSlide).hasClass('is-previous')) {
+            // go to previous slide
+            gallery.flickity('previous', true);
         }
     });
 
 });
 
-// add 'is-previous' and 'is-next' classes to Flickity cells
+/* add 'is-previous' and 'is-next' classes to Flickity cells
+------------------------------------------------------------------*/
 Flickity.createMethods.push('_createPrevNextCells');
 
 Flickity.prototype._createPrevNextCells = function() {
