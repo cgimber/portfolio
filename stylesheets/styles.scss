@@ -1,10 +1,8 @@
 @import "vendor/bourbon/bourbon";
-
 @include font-face('audimat', '/fonts/audimat-regular-webfont', $file-formats: eot ttf woff);
 @include font-face('audimat', '/fonts/audimat-bold-webfont', bold, $file-formats: eot ttf woff);
 @include font-face('audimat', '/fonts/audimat-italic-webfont', normal, italic, $file-formats: eot ttf woff);
 @include font-face('audimat', '/fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: eot ttf woff);
-
 *,
 *:after,
 *:before {
@@ -153,21 +151,8 @@ nav ul a:hover {
 }
 
 
-/*External Links*/
-
-a[href^="http://"] {}
-
-
-/*
-* ====================== HOME ======================
-*/
-
-
-/*
-#fullpage {
-    transition: all .25s linear;
-}
-*/
+/* HOME
+=====================================================================*/
 
 .section-about {
     padding: 0 8rem;
@@ -178,6 +163,10 @@ a[href^="http://"] {}
 .greetings {
     text-align: left;
     line-height: 7.5rem;
+}
+
+.greetings br:last-of-type {
+    display: none;
 }
 
 .underline-green {
@@ -216,16 +205,7 @@ a.underline-resume:focus {
 }
 
 .gallery-cell {
-    /*width: 50%;*/
     padding: 0 4.16%;
-}
-
-.is-selected {
-
-}
-
-.is-previous, .is-next {
-    /*pointer-events: none;*/
 }
 
 .is-previous img.home:hover,
@@ -252,6 +232,7 @@ img.home:active {
 
 img.home {
     width: 50vw;
+    max-width: 99rem;
     margin-bottom: 2rem;
     box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.2);
     /*    cursor: alias;*/
@@ -281,7 +262,8 @@ img.home {
 }
 
 
-/* Styles for the keyboard arrows */
+/* arrow keys
+---------------------------------------------------------------------*/
 
 #home-keys {
     list-style: none;
@@ -292,7 +274,6 @@ img.home {
     left: 50%;
     @include transform(translateX(-50%) translateY(-53%));
     display: block;
-    /*    background: blue;*/
 }
 
 .key {
@@ -323,43 +304,7 @@ img.home {
 }
 */
 
-@-webkit-keyframes keypress {
-    0% {
-        color: #bbb;
-        background: #fafafa;
-    }
-    100% {
-        color: #888;
-        background: #ebeced;
-        @include transform(translateX(1px) translateY(2px));
-    }
-}
-
-@-moz-keyframes keypress {
-    0% {
-        color: #bbb;
-        background: #fafafa;
-    }
-    100% {
-        color: #888;
-        background: #ebeced;
-        @include transform(translateX(1px) translateY(2px));
-    }
-}
-
-@-o-keyframes keypress {
-    0% {
-        color: #bbb;
-        background: #fafafa;
-    }
-    100% {
-        color: #888;
-        background: #ebeced;
-        @include transform(translateX(1px) translateY(2px));
-    }
-}
-
-@keyframes keypress {
+@include keyframes(keyPress) {
     0% {
         color: #bbb;
         background: #fafafa;
@@ -375,34 +320,33 @@ img.home {
     position: absolute;
     left: 1.5rem;
     top: 7rem;
-    @include animation(keypress .6s 0s infinite alternate);
+    @include animation(keyPress .6s 0s infinite alternate);
 }
 
 .right {
     position: absolute;
     right: 1.5rem;
     top: 7rem;
-    @include animation(keypress .6s 0.15s infinite alternate);
+    @include animation(keyPress .6s 0.15s infinite alternate);
 }
 
 .top {
     position: absolute;
     left: 11.3rem;
     top: 0rem;
-    @include animation(keypress .6s 0.3s infinite alternate);
+    @include animation(keyPress .6s 0.3s infinite alternate);
 }
 
 .down {
     position: absolute;
     left: 11.3rem;
     top: 7rem;
-    @include animation(keypress .6s 0.45s infinite alternate);
+    @include animation(keyPress .6s 0.45s infinite alternate);
 }
 
 
-/*
-* —––––––––––––– CSS Arrows —–––––––––––––
-*/
+/* arrow symbols
+---------------------------------------------------------------------*/
 
 .arrow-up {
     width: 0;
@@ -437,9 +381,8 @@ img.home {
 }
 
 
-/*
-* ====================== PROJECT PAGE ======================
-*/
+/* PROJECT PAGE
+=====================================================================*/
 
 .flex-container {
     @include display(flex !important);
@@ -515,9 +458,10 @@ img.project-nospacing {
 }
 
 .page-wrap {
+    max-width: 75rem;
     min-height: 100%;
-    margin-left: 16rem;
-    margin-right: 16rem;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 12rem;
     /* equal to footer height */
     margin-bottom: -12rem;
@@ -557,25 +501,33 @@ img.project-nospacing {
 
 .iphone6--half {
     position: relative;
-    padding: 0;
-    margin: 4rem;
-    padding: calc(10.5rem*5/6) calc(4.5rem*5/6);
-    display: inline-block;
-    width: calc(36rem*5/6);
-    height: calc(69rem*5/6);
     box-sizing: border-box;
-    background-size: calc(36rem*5/6) calc(69rem*5/6) !important;
+    margin: 4rem 0;
+    padding: calc(1.136*7.875rem*5/6) calc(1.136*3.375rem*5/6);
+    display: inline-block;
+    width: calc(1.136*27rem*5/6);
+    height: calc(1.136*51.75rem*5/6);
+    background-size: calc(1.136*27rem*5/6) calc(1.136*51.75rem*5/6) !important;
+}
+
+.iphone6--half:nth-of-type(1) {
+    margin-left: 10%;
+    margin-right: 3.75%;
+}
+
+.iphone6--half:nth-of-type(2) {
+    margin-left: 3.75%;
+    margin-right: 10%;
 }
 
 .iphone6--full {
-    position: relative;
-    padding: 0;
-    margin: 40px;
-    padding: calc(10.5rem*3/2) calc(4.5rem*3/2);
     display: none;
+    box-sizing: border-box;
+    position: relative;
+    margin: 4rem 0;
+    padding: calc(10.5rem*3/2) calc(4.5rem*3/2);
     width: calc(36rem*3/2);
     height: calc(69rem*3/2);
-    box-sizing: border-box;
     background-size: calc(36rem*3/2) calc(69rem*3/2) !important;
 }
 
@@ -693,12 +645,12 @@ img.icon-social:hover {
 }
 
 
-/*
-* —––––––––––––– Media Queries —–––––––––––––
-*/
+/* MEDIA QUERIES
+=====================================================================*/
 
 
-/* Hide arrow key modal on mobile */
+/* hide arrow key modal on mobile
+---------------------------------------------------------------------*/
 
 @media only screen and (min-device-width: 320px) and (orientation: portrait),
 (max-device-width: 1024px) and (orientation: landscape) {
@@ -715,11 +667,8 @@ img.icon-social:hover {
 }
 
 
-/* Desktop queries */
-
-@media all and (min-width: 1600px) {
-
-}
+/*
+---------------------------------------------------------------------*/
 
 @media all and (min-width: 1199px) {
     .page-wrap {
@@ -733,7 +682,7 @@ img.icon-social:hover {
     }
 }
 
-@media all and (min-width: 963px) {
+@media all and (max-width: 1122px) {
     .greetings {
         font-size: 5rem;
         line-height: 6.3rem;
@@ -749,20 +698,7 @@ img.icon-social:hover {
     }
 }
 
-@media all and (min-width: 1000px) {
-    .iphone6--half {
-        padding: calc(105px*2/3) calc(45px*2/3);
-        width: calc(360px*2/3);
-        height: calc(690px*2/3);
-        background-size: calc(360px*2/3) calc(690px*2/3) !important;
-    }
-}
-
-@media all and (min-width: 999px) {
-    .page-wrap {
-        margin-left: 8rem;
-        margin-right: 8rem;
-    }
+@media all and (max-width: 999px) {
     #project-arrows a.previous img {
         width: 2.9rem;
         position: fixed;
@@ -777,7 +713,7 @@ img.icon-social:hover {
     }
 }
 
-@media all and (min-width: 834px) {
+@media all and (max-width: 962px) {
     .greetings {
         font-size: 4.2rem;
         line-height: 5.2rem;
@@ -787,20 +723,7 @@ img.icon-social:hover {
     }
 }
 
-@media all and (max-width: 950px) {
-    .iphone6--half {
-        display: none;
-    }
-    .iphone6--full {
-        display: inline-block;
-        padding: calc(105px*1/2) calc(45px*1/2);
-        width: calc(360px*1/2);
-        height: calc(690px*1/2);
-        background-size: calc(360px*1/2) calc(690px*1/2) !important;
-    }
-}
-
-@media all and (min-width: 722px) {
+@media all and (max-width: 834px) {
     .greetings {
         font-size: 3.5rem;
         line-height: 4.375rem;
@@ -814,19 +737,25 @@ img.icon-social:hover {
     #resume {
         font-size: 1.75rem;
     }
-}
-
-@media all and (min-width: 680px) {
-    .page-wrap {
-        width: 60rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
     #project-arrows a.previous img {
         left: 1rem;
     }
     #project-arrows a.next img {
         right: 1rem;
+    }
+    .page-wrap {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    .iphone6--half {
+        display: none;
+    }
+    .iphone6--full {
+        display: inline-block;
+        padding: calc(1.136*7.875rem*5/6) calc(1.136*3.375rem*5/6);
+        width: calc(1.136*27rem*5/6);
+        height: calc(1.136*51.75rem*5/6);
+        background-size: calc(1.136*27rem*5/6) calc(1.136*51.75rem*5/6) !important;
     }
 }
 
@@ -836,18 +765,8 @@ img.icon-social:hover {
     }
 }
 
-@media all and (max-width: 679px) {
-    .page-wrap {
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
-}
-
-@media all and (min-width: 600px) {
-}
-
 @media all and (max-width: 600px) {
-    /*Break flickity and have slides full width?*/
+    /* Break flickity and have slides full width? */
     .section-about {
         padding: 0 1.5rem;
     }
@@ -870,8 +789,21 @@ img.icon-social:hover {
     #footer {
         padding: 0 1.5rem;
     }
+    #footer h1 {
+        font-size: 5rem;
+    }
     #footer li {
         padding-left: 2rem;
+    }
+    #footer ul {
+        height: 3rem;
+    }
+    .icon-social {
+        width: 3rem;
+        height: 3rem;
+    }
+    .iphone6--full {
+        margin: 1rem 0;
     }
 }
 
@@ -882,31 +814,5 @@ img.icon-social:hover {
     .page-wrap {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
-    }
-}
-
-@media all and (max-width: 489px) {
-    #footer h1 {
-        font-size: 5rem;
-    }
-}
-
-@media all and (max-width: 591px) {
-    img.home {
-        width: 100vw;
-    }
-    nav li {
-        padding-left: 2rem;
-    }
-    #footer ul {
-        height: 3rem;
-    }
-    #footer li {
-        height: 3rem;
-        padding-left: 1rem;
-    }
-    .icon-social {
-        width: 3rem;
-        height: 3rem;
     }
 }

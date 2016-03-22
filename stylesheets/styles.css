@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "audimat";
   font-style: normal;
@@ -159,15 +158,8 @@ nav a:visited {
 nav ul a:hover {
   border-bottom: 0.4rem solid black; }
 
-/*External Links*/
-/*
-* ====================== HOME ======================
-*/
-/*
-#fullpage {
-    transition: all .25s linear;
-}
-*/
+/* HOME
+=====================================================================*/
 .section-about {
   padding: 0 8rem;
   color: white;
@@ -178,6 +170,9 @@ nav ul a:hover {
 .greetings {
   text-align: left;
   line-height: 7.5rem; }
+
+.greetings br:last-of-type {
+  display: none; }
 
 .underline-green {
   border-bottom: 0.5rem solid #52F2F2; }
@@ -213,11 +208,7 @@ a.underline-resume:focus {
   display: block; }
 
 .gallery-cell {
-  /*width: 50%;*/
   padding: 0 4.16%; }
-
-.is-previous, .is-next {
-  /*pointer-events: none;*/ }
 
 .is-previous img.home:hover,
 .is-previous img.home:focus {
@@ -243,6 +234,7 @@ img.home:active {
 
 img.home {
   width: 50vw;
+  max-width: 99rem;
   margin-bottom: 2rem;
   box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.2);
   /*    cursor: alias;*/
@@ -274,7 +266,8 @@ img.home {
   text-transform: uppercase;
   letter-spacing: .125rem; }
 
-/* Styles for the keyboard arrows */
+/* arrow keys
+---------------------------------------------------------------------*/
 #home-keys {
   list-style: none;
   width: 32rem;
@@ -287,8 +280,7 @@ img.home {
   -ms-transform: translateX(-50%) translateY(-53%);
   -o-transform: translateX(-50%) translateY(-53%);
   transform: translateX(-50%) translateY(-53%);
-  display: block;
-  /*    background: blue;*/ }
+  display: block; }
 
 .key {
   font-size: 4rem;
@@ -315,43 +307,23 @@ img.home {
     margin: 2px 3px 0 0;
 }
 */
-@-webkit-keyframes keypress {
+@-webkit-keyframes keyPress {
   0% {
     color: #bbb;
     background: #fafafa; }
   100% {
     color: #888;
     background: #ebeced;
-    -webkit-transform: translateX(1px) translateY(2px);
-    -moz-transform: translateX(1px) translateY(2px);
-    -ms-transform: translateX(1px) translateY(2px);
-    -o-transform: translateX(1px) translateY(2px);
-    transform: translateX(1px) translateY(2px); } }
-@-moz-keyframes keypress {
+    -webkit-transform: translateX(1px) translateY(2px); } }
+@-moz-keyframes keyPress {
   0% {
     color: #bbb;
     background: #fafafa; }
   100% {
     color: #888;
     background: #ebeced;
-    -webkit-transform: translateX(1px) translateY(2px);
-    -moz-transform: translateX(1px) translateY(2px);
-    -ms-transform: translateX(1px) translateY(2px);
-    -o-transform: translateX(1px) translateY(2px);
-    transform: translateX(1px) translateY(2px); } }
-@-o-keyframes keypress {
-  0% {
-    color: #bbb;
-    background: #fafafa; }
-  100% {
-    color: #888;
-    background: #ebeced;
-    -webkit-transform: translateX(1px) translateY(2px);
-    -moz-transform: translateX(1px) translateY(2px);
-    -ms-transform: translateX(1px) translateY(2px);
-    -o-transform: translateX(1px) translateY(2px);
-    transform: translateX(1px) translateY(2px); } }
-@keyframes keypress {
+    -moz-transform: translateX(1px) translateY(2px); } }
+@keyframes keyPress {
   0% {
     color: #bbb;
     background: #fafafa; }
@@ -367,37 +339,36 @@ img.home {
   position: absolute;
   left: 1.5rem;
   top: 7rem;
-  -webkit-animation: keypress 0.6s 0s infinite alternate;
-  -moz-animation: keypress 0.6s 0s infinite alternate;
-  animation: keypress 0.6s 0s infinite alternate; }
+  -webkit-animation: keyPress 0.6s 0s infinite alternate;
+  -moz-animation: keyPress 0.6s 0s infinite alternate;
+  animation: keyPress 0.6s 0s infinite alternate; }
 
 .right {
   position: absolute;
   right: 1.5rem;
   top: 7rem;
-  -webkit-animation: keypress 0.6s 0.15s infinite alternate;
-  -moz-animation: keypress 0.6s 0.15s infinite alternate;
-  animation: keypress 0.6s 0.15s infinite alternate; }
+  -webkit-animation: keyPress 0.6s 0.15s infinite alternate;
+  -moz-animation: keyPress 0.6s 0.15s infinite alternate;
+  animation: keyPress 0.6s 0.15s infinite alternate; }
 
 .top {
   position: absolute;
   left: 11.3rem;
   top: 0rem;
-  -webkit-animation: keypress 0.6s 0.3s infinite alternate;
-  -moz-animation: keypress 0.6s 0.3s infinite alternate;
-  animation: keypress 0.6s 0.3s infinite alternate; }
+  -webkit-animation: keyPress 0.6s 0.3s infinite alternate;
+  -moz-animation: keyPress 0.6s 0.3s infinite alternate;
+  animation: keyPress 0.6s 0.3s infinite alternate; }
 
 .down {
   position: absolute;
   left: 11.3rem;
   top: 7rem;
-  -webkit-animation: keypress 0.6s 0.45s infinite alternate;
-  -moz-animation: keypress 0.6s 0.45s infinite alternate;
-  animation: keypress 0.6s 0.45s infinite alternate; }
+  -webkit-animation: keyPress 0.6s 0.45s infinite alternate;
+  -moz-animation: keyPress 0.6s 0.45s infinite alternate;
+  animation: keyPress 0.6s 0.45s infinite alternate; }
 
-/*
-* —––––––––––––– CSS Arrows —–––––––––––––
-*/
+/* arrow symbols
+---------------------------------------------------------------------*/
 .arrow-up {
   width: 0;
   height: 0;
@@ -426,9 +397,8 @@ img.home {
   border-bottom: 1.4rem solid transparent;
   border-right: 1.4rem solid white; }
 
-/*
-* ====================== PROJECT PAGE ======================
-*/
+/* PROJECT PAGE
+=====================================================================*/
 .flex-container {
   display: flex !important;
   -webkit-flex-flow: row wrap;
@@ -509,9 +479,10 @@ img.project-nospacing {
   letter-spacing: .05rem; }
 
 .page-wrap {
+  max-width: 75rem;
   min-height: 100%;
-  margin-left: 16rem;
-  margin-right: 16rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 12rem;
   /* equal to footer height */
   margin-bottom: -12rem;
@@ -569,24 +540,30 @@ img.project-nospacing {
 
 .iphone6--half {
   position: relative;
-  padding: 0;
-  margin: 4rem;
-  padding: calc(10.5rem*5/6) calc(4.5rem*5/6);
-  display: inline-block;
-  width: calc(36rem*5/6);
-  height: calc(69rem*5/6);
   box-sizing: border-box;
-  background-size: calc(36rem*5/6) calc(69rem*5/6) !important; }
+  margin: 4rem 0;
+  padding: calc(1.136*7.875rem*5/6) calc(1.136*3.375rem*5/6);
+  display: inline-block;
+  width: calc(1.136*27rem*5/6);
+  height: calc(1.136*51.75rem*5/6);
+  background-size: calc(1.136*27rem*5/6) calc(1.136*51.75rem*5/6) !important; }
+
+.iphone6--half:nth-of-type(1) {
+  margin-left: 10%;
+  margin-right: 3.75%; }
+
+.iphone6--half:nth-of-type(2) {
+  margin-left: 3.75%;
+  margin-right: 10%; }
 
 .iphone6--full {
-  position: relative;
-  padding: 0;
-  margin: 40px;
-  padding: calc(10.5rem*3/2) calc(4.5rem*3/2);
   display: none;
+  box-sizing: border-box;
+  position: relative;
+  margin: 4rem 0;
+  padding: calc(10.5rem*3/2) calc(4.5rem*3/2);
   width: calc(36rem*3/2);
   height: calc(69rem*3/2);
-  box-sizing: border-box;
   background-size: calc(36rem*3/2) calc(69rem*3/2) !important; }
 
 .iphone6--wht {
@@ -695,17 +672,18 @@ img.icon-social:hover {
   position: absolute;
   top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop))+'rem'); }
 
-/*
-* —––––––––––––– Media Queries —–––––––––––––
-*/
-/* Hide arrow key modal on mobile */
+/* MEDIA QUERIES
+=====================================================================*/
+/* hide arrow key modal on mobile
+---------------------------------------------------------------------*/
 @media only screen and (min-device-width: 320px) and (orientation: portrait), (max-device-width: 1024px) and (orientation: landscape) {
   .modal {
     display: none; } }
 @media only screen and (min-device-width: 320px) and (orientation: portrait), (max-device-width: 768px) and (orientation: portrait) {
   .modal {
     display: none; } }
-/* Desktop queries */
+/*
+---------------------------------------------------------------------*/
 @media all and (min-width: 1199px) {
   .page-wrap {
     min-height: 100%;
@@ -715,7 +693,7 @@ img.icon-social:hover {
     margin-top: 12rem;
     /* equal to footer height */
     margin-bottom: -12rem; } }
-@media all and (min-width: 963px) {
+@media all and (max-width: 1122px) {
   .greetings {
     font-size: 5rem;
     line-height: 6.3rem; }
@@ -728,17 +706,7 @@ img.icon-social:hover {
 
   #resume {
     font-size: 2.5rem; } }
-@media all and (min-width: 1000px) {
-  .iphone6--half {
-    padding: calc(105px*2/3) calc(45px*2/3);
-    width: calc(360px*2/3);
-    height: calc(690px*2/3);
-    background-size: calc(360px*2/3) calc(690px*2/3) !important; } }
-@media all and (min-width: 999px) {
-  .page-wrap {
-    margin-left: 8rem;
-    margin-right: 8rem; }
-
+@media all and (max-width: 999px) {
   #project-arrows a.previous img {
     width: 2.9rem;
     position: fixed;
@@ -750,24 +718,14 @@ img.icon-social:hover {
     position: fixed;
     top: 50%;
     right: 2rem; } }
-@media all and (min-width: 834px) {
+@media all and (max-width: 962px) {
   .greetings {
     font-size: 4.2rem;
     line-height: 5.2rem; }
 
   #resume {
     font-size: 2.1rem; } }
-@media all and (max-width: 950px) {
-  .iphone6--half {
-    display: none; }
-
-  .iphone6--full {
-    display: inline-block;
-    padding: calc(105px*1/2) calc(45px*1/2);
-    width: calc(360px*1/2);
-    height: calc(690px*1/2);
-    background-size: calc(360px*1/2) calc(690px*1/2) !important; } }
-@media all and (min-width: 722px) {
+@media all and (max-width: 834px) {
   .greetings {
     font-size: 3.5rem;
     line-height: 4.375rem; }
@@ -779,27 +737,32 @@ img.icon-social:hover {
     border-bottom: 0.3rem solid #F25252; }
 
   #resume {
-    font-size: 1.75rem; } }
-@media all and (min-width: 680px) {
-  .page-wrap {
-    width: 60rem;
-    margin-left: auto;
-    margin-right: auto; }
+    font-size: 1.75rem; }
 
   #project-arrows a.previous img {
     left: 1rem; }
 
   #project-arrows a.next img {
-    right: 1rem; } }
+    right: 1rem; }
+
+  .page-wrap {
+    margin-left: 4rem;
+    margin-right: 4rem; }
+
+  .iphone6--half {
+    display: none; }
+
+  .iphone6--full {
+    display: inline-block;
+    padding: calc(1.136*7.875rem*5/6) calc(1.136*3.375rem*5/6);
+    width: calc(1.136*27rem*5/6);
+    height: calc(1.136*51.75rem*5/6);
+    background-size: calc(1.136*27rem*5/6) calc(1.136*51.75rem*5/6) !important; } }
 @media all and (max-width: 669px) {
   nav li {
     padding-left: 6rem; } }
-@media all and (max-width: 679px) {
-  .page-wrap {
-    margin-left: 4rem;
-    margin-right: 4rem; } }
 @media all and (max-width: 600px) {
-  /*Break flickity and have slides full width?*/
+  /* Break flickity and have slides full width? */
   .section-about {
     padding: 0 1.5rem; }
 
@@ -822,8 +785,21 @@ img.icon-social:hover {
   #footer {
     padding: 0 1.5rem; }
 
+  #footer h1 {
+    font-size: 5rem; }
+
   #footer li {
-    padding-left: 2rem; } }
+    padding-left: 2rem; }
+
+  #footer ul {
+    height: 3rem; }
+
+  .icon-social {
+    width: 3rem;
+    height: 3rem; }
+
+  .iphone6--full {
+    margin: 1rem 0; } }
 @media all and (max-width: 560px) {
   #project-tags {
     display: none; }
@@ -831,25 +807,5 @@ img.icon-social:hover {
   .page-wrap {
     margin-left: 1.5rem;
     margin-right: 1.5rem; } }
-@media all and (max-width: 489px) {
-  #footer h1 {
-    font-size: 5rem; } }
-@media all and (max-width: 591px) {
-  img.home {
-    width: 100vw; }
-
-  nav li {
-    padding-left: 2rem; }
-
-  #footer ul {
-    height: 3rem; }
-
-  #footer li {
-    height: 3rem;
-    padding-left: 1rem; }
-
-  .icon-social {
-    width: 3rem;
-    height: 3rem; } }
 
 /*# sourceMappingURL=styles.css.map */
