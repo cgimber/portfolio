@@ -3,6 +3,16 @@
 @include font-face('audimat', '/fonts/audimat-bold-webfont', bold, $file-formats: eot ttf woff);
 @include font-face('audimat', '/fonts/audimat-italic-webfont', normal, italic, $file-formats: eot ttf woff);
 @include font-face('audimat', '/fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: eot ttf woff);
+
+/* colors
+---------------------------------------------------------------------*/
+
+$about: #1a1a1a;
+$bruinbash: #3F3F3F;
+$juggle: #14A697;
+$ageago: #f2bb13;
+$localsonly: #F29D35;
+$sozo: #f25151;
 *,
 *:after,
 *:before {
@@ -19,6 +29,7 @@ html,
 body {
     height: 100%;
     font-size: 62.5%;
+    overflow-y: scroll;
 }
 
 body {
@@ -154,6 +165,67 @@ nav ul a:hover {
 /* HOME
 =====================================================================*/
 
+
+/* mobile
+---------------------------------------------------------------------*/
+
+$section-height: calc((100vh - 5rem) / 2);
+$gallery-height: calc((2/3)*(100vw - 8rem));
+$gallery-padding: calc(($section-height - $gallery-height) / 2);
+.section.isMobile {
+    position: relative;
+    &.section--about {
+        height: calc(((100vh - 5rem) / 2) + 5rem);
+        padding-top: 11vh;
+        background: $about;
+    }
+    &.section--bruinbash {
+        background: $bruinbash;
+    }
+    &.section--juggle {
+        background: $juggle;
+    }
+    &.section--ageago {
+        background: $ageago;
+    }
+    &.section--localsonly {
+        background: $localsonly;
+    }
+    &.section--sozo {
+        background: $sozo;
+    }
+}
+
+.section.isMobile .gallery {
+    padding-top: 9vh;
+    padding-bottom: 5vh;
+}
+
+// .section.isMobile:first-of-type {
+//     padding-top: 5rem; // nav height
+// }
+
+/* page dots won't show on desktop*/
+
+.flickity-page-dots {
+    bottom: 3vh;
+}
+
+.flickity-page-dots .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.flickity-page-dots .dot.is-selected {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* desktop
+---------------------------------------------------------------------*/
+
 .section-about {
     padding: 0 8rem;
     color: white;
@@ -162,7 +234,7 @@ nav ul a:hover {
 
 .greetings {
     text-align: left;
-    line-height: 7.5rem;
+    line-height: 1.5em;
 }
 
 .greetings br:last-of-type {
@@ -196,33 +268,25 @@ a.underline-resume:focus {
     text-align: left;
 }
 
-.variable-width {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    @include transform(translateX(-50%) translateY(-65%));
-    display: block;
-}
-
 .gallery-cell {
     padding: 0 4.16%;
 }
 
 .is-previous img.home:hover,
 .is-previous img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
     cursor: url(/assets/cursor-previous-01.png) 20 20, cell;
 }
 
 .is-selected img.home:hover,
 .is-selected img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
     cursor: url(/assets/cursor-plus-03.png) 20 20, cell;
 }
 
 .is-next img.home:hover,
 .is-next img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 2rem 2rem 0 white;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
     cursor: url(/assets/cursor-next-01.png) 20 20, cell;
 }
 
@@ -234,7 +298,7 @@ img.home {
     width: 50vw;
     max-width: 99rem;
     margin-bottom: 2rem;
-    box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
     /*    cursor: alias;*/
     @include transition(all .25s ease-in-out);
 }
@@ -406,7 +470,7 @@ img.home {
 .project-body {
     max-width: 55rem;
     padding-top: 4rem;
-    line-height: 2rem;
+    line-height: 1.5em;
     letter-spacing: .05rem;
 }
 
@@ -453,18 +517,15 @@ img.project-nospacing {
 
 .project-credits {
     padding-top: 4rem;
-    line-height: 2rem;
+    line-height: 1.5em;
     letter-spacing: .05rem;
 }
 
 .page-wrap {
     max-width: 75rem;
     min-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 12rem;
-    /* equal to footer height */
-    margin-bottom: -12rem;
+    /* margin-top and bottom equal to footer height */
+    margin: 12rem auto -12rem auto;
     @include transition(all .5s ease-in-out);
 }
 
@@ -674,18 +735,13 @@ img.icon-social:hover {
     .page-wrap {
         min-height: 100%;
         width: 86rem;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 12rem;
-        /* equal to footer height */
-        margin-bottom: -12rem;
     }
 }
 
 @media all and (max-width: 1122px) {
     .greetings {
         font-size: 5rem;
-        line-height: 6.3rem;
+        line-height: 1.5em;
     }
     .underline-green {
         border-bottom: 0.4rem solid #52F2F2;
@@ -716,7 +772,7 @@ img.icon-social:hover {
 @media all and (max-width: 962px) {
     .greetings {
         font-size: 4.2rem;
-        line-height: 5.2rem;
+        line-height: 1.5em;
     }
     #resume {
         font-size: 2.1rem;
@@ -726,7 +782,7 @@ img.icon-social:hover {
 @media all and (max-width: 834px) {
     .greetings {
         font-size: 3.5rem;
-        line-height: 4.375rem;
+        line-height: 1.5em;
     }
     .underline-green {
         border-bottom: 0.3rem solid #52F2F2;
@@ -744,8 +800,7 @@ img.icon-social:hover {
         right: 1rem;
     }
     .page-wrap {
-        margin-left: 4rem;
-        margin-right: 4rem;
+        margin: 12rem 4rem -12rem 4rem;
     }
     .iphone6--half {
         display: none;
@@ -767,36 +822,60 @@ img.icon-social:hover {
 
 @media all and (max-width: 600px) {
     /* Break flickity and have slides full width? */
+    .greetings br:last-of-type {
+        display: block;
+    }
     .section-about {
-        padding: 0 1.5rem;
+        padding: 0 4rem;
     }
     .greetings {
-        font-size: 3.5rem;
-        line-height: 4.375rem;
+        font-size: 3rem;
+        line-height: 1.5em;
+    }
+    #resume {
+        font-size: 2.25rem;
     }
     .gallery-cell {
-        padding: 0;
+        padding: 0 4rem;
     }
     img.home {
-        width: 83.3vw;
+        width: calc(100vw - 8rem);
     }
     nav {
-        padding: 0 1.5rem;
-    }
-    nav li {
-        padding-left: 5rem;
+        height: 5rem;
+        padding: 0 4rem;
+        #logo {
+            height: 2rem;
+            width: 4.4375rem;
+        }
+        #logo svg {
+            height: 2rem;
+            width: 4.4375rem;
+        }
+        li {
+            padding-left: 2rem;
+        }
+        ul {
+            @include transform(translateY(-52%));
+        }
+        a {
+            font-size: 2.25rem;
+            &.active {
+                border-bottom: 0.3rem solid black;
+            }
+        }
     }
     #footer {
         padding: 0 1.5rem;
-    }
-    #footer h1 {
-        font-size: 5rem;
-    }
-    #footer li {
-        padding-left: 2rem;
-    }
-    #footer ul {
-        height: 3rem;
+        h1 {
+            font-size: 5rem;
+        }
+        li {
+            padding-left: 2rem;
+        }
+        ul {
+            height: 3rem;
+        }
     }
     .icon-social {
         width: 3rem;
@@ -812,7 +891,36 @@ img.icon-social:hover {
         display: none;
     }
     .page-wrap {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin: 12rem 1.5rem -12rem 1.5rem;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .section-about {
+        padding: 0 2rem;
+    }
+    .greetings {
+        font-size: 2.5rem;
+    }
+    #resume {
+        font-size: 1.875rem;
+    }
+    .gallery-cell {
+        padding: 0 2rem;
+    }
+    img.home {
+        width: calc(100vw - 4rem);
+    }
+    nav {
+        padding: 0 2rem;
+        ul {
+            @include transform(translateY(-54%));
+        }
+        a {
+            font-size: 2rem;
+            &.active {
+                border-bottom: 0.3rem solid black;
+            }
+        }
     }
 }
