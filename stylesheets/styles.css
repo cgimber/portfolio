@@ -2,22 +2,22 @@
   font-family: "audimat";
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/audimat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/audimat-regular-webfont.woff") format("woff"), url("/fonts/audimat-regular-webfont.ttf") format("truetype"); }
+  src: url("../fonts/audimat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/audimat-regular-webfont.woff") format("woff"), url("../fonts/audimat-regular-webfont.ttf") format("truetype"); }
 @font-face {
   font-family: "audimat";
   font-style: normal;
   font-weight: bold;
-  src: url("/fonts/audimat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/audimat-bold-webfont.woff") format("woff"), url("/fonts/audimat-bold-webfont.ttf") format("truetype"); }
+  src: url("../fonts/audimat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/audimat-bold-webfont.woff") format("woff"), url("../fonts/audimat-bold-webfont.ttf") format("truetype"); }
 @font-face {
   font-family: "audimat";
   font-style: italic;
   font-weight: normal;
-  src: url("/fonts/audimat-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/audimat-italic-webfont.woff") format("woff"), url("/fonts/audimat-italic-webfont.ttf") format("truetype"); }
+  src: url("../fonts/audimat-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/audimat-italic-webfont.woff") format("woff"), url("../fonts/audimat-italic-webfont.ttf") format("truetype"); }
 @font-face {
   font-family: "audimat";
   font-style: italic;
   font-weight: bold;
-  src: url("/fonts/audimat-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/audimat-bolditalic-webfont.woff") format("woff"), url("/fonts/audimat-bolditalic-webfont.ttf") format("truetype"); }
+  src: url("../fonts/audimat-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/audimat-bolditalic-webfont.woff") format("woff"), url("../fonts/audimat-bolditalic-webfont.ttf") format("truetype"); }
 /* colors
 ---------------------------------------------------------------------*/
 *,
@@ -33,8 +33,13 @@
 html,
 body {
   height: 100%;
-  font-size: 62.5%;
-  overflow-y: scroll; }
+  font-size: 62.5%; }
+
+html.isMobile,
+body.isMobile {
+  height: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 body {
   margin: 0;
@@ -152,14 +157,14 @@ nav a {
   text-decoration: none; }
 
 nav a.active {
-  border-bottom: 0.4rem solid black; }
+  border-bottom: 0.125em solid black; }
 
 nav a:link,
 nav a:visited {
   color: black; }
 
 nav ul a:hover {
-  border-bottom: 0.4rem solid black; }
+  border-bottom: 0.125em solid black; }
 
 /* HOME
 =====================================================================*/
@@ -212,26 +217,26 @@ nav ul a:hover {
   text-align: left;
   line-height: 1.5em; }
 
-.greetings br:last-of-type {
+.greetings__line-break {
   display: none; }
 
 .underline-green {
-  border-bottom: 0.5rem solid #52F2F2; }
+  border-bottom: 0.125em solid #52F2F2; }
 
 .underline-red {
-  border-bottom: 0.5rem solid #F25252; }
+  border-bottom: 0.125em solid #F25252; }
 
 a.underline-resume,
 a.underline-resume:link,
 a.underline-resume:visited {
   text-decoration: none;
-  border-bottom: 0.3rem solid white;
+  border-bottom: 0.125em solid white;
   color: white; }
 
 a.underline-resume:hover,
 a.underline-resume:focus {
   background-color: white;
-  border-bottom: 0.3rem solid black;
+  border-bottom: 0.125em solid black;
   color: black; }
 
 #resume {
@@ -239,28 +244,6 @@ a.underline-resume:focus {
 
 .gallery-cell {
   padding: 0 4.16%; }
-
-.is-previous img.home:hover,
-.is-previous img.home:focus {
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-  cursor: url(/assets/cursor-previous-01.png) 20 20, cell; }
-
-.is-selected img.home:hover,
-.is-selected img.home:focus {
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-  cursor: url(/assets/cursor-plus-03.png) 20 20, cell; }
-
-.is-next img.home:hover,
-.is-next img.home:focus {
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-  cursor: url(/assets/cursor-next-01.png) 20 20, cell; }
-
-img.home:active {
-  -webkit-transform: translateX(3px) translateY(3px);
-  -moz-transform: translateX(3px) translateY(3px);
-  -ms-transform: translateX(3px) translateY(3px);
-  -o-transform: translateX(3px) translateY(3px);
-  transform: translateX(3px) translateY(3px); }
 
 img.home {
   width: 50vw;
@@ -271,6 +254,28 @@ img.home {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
+
+img.home:hover {
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white; }
+
+img.home.touchSupport:hover {
+  box-shadow: none; }
+
+img.home:active {
+  -webkit-transform: translateX(3px) translateY(3px);
+  -moz-transform: translateX(3px) translateY(3px);
+  -ms-transform: translateX(3px) translateY(3px);
+  -o-transform: translateX(3px) translateY(3px);
+  transform: translateX(3px) translateY(3px); }
+
+.is-previous img.home:hover {
+  cursor: url(/assets/cursor-previous-01.png) 20 20, cell; }
+
+.is-selected img.home:hover {
+  cursor: url(/assets/cursor-plus-03.png) 20 20, cell; }
+
+.is-next img.home:hover {
+  cursor: url(/assets/cursor-next-01.png) 20 20, cell; }
 
 .modal {
   /*    display: none;*/
@@ -454,7 +459,7 @@ img.home {
   -ms-flex-align: center; }
 
 #project-title {
-  /*    border-bottom: 0.5rem solid #3f5ca9;*/ }
+  /*    border-bottom: 0.125em solid #3f5ca9;*/ }
 
 #project-tags {
   text-align: right;
@@ -525,13 +530,13 @@ img.project-nospacing {
 .page-wrap a:visited {
   text-decoration: none;
   color: white;
-  border-bottom: 0.2rem solid white; }
+  border-bottom: 0.125em solid white; }
 
 .page-wrap a:hover,
 .page-wrap a:focus {
   background-color: white;
   color: black;
-  border-bottom: 0.2rem solid black; }
+  border-bottom: 0.125em solid black; }
 
 .device-container {
   display: -webkit-box;
@@ -663,7 +668,7 @@ video {
 
 #footer .footer-text a:hover {
   text-decoration: none;
-  border-bottom: 0.6rem solid black; }
+  border-bottom: 0.125em solid black; }
 
 #footer ul {
   height: 4rem;
@@ -720,12 +725,6 @@ img.icon-social:hover {
     font-size: 5rem;
     line-height: 1.5em; }
 
-  .underline-green {
-    border-bottom: 0.4rem solid #52F2F2; }
-
-  .underline-red {
-    border-bottom: 0.4rem solid #F25252; }
-
   #resume {
     font-size: 2.5rem; } }
 @media all and (max-width: 999px) {
@@ -748,15 +747,12 @@ img.icon-social:hover {
   #resume {
     font-size: 2.1rem; } }
 @media all and (max-width: 834px) {
+  nav {
+    padding: 0 4rem; }
+
   .greetings {
     font-size: 3.5rem;
     line-height: 1.5em; }
-
-  .underline-green {
-    border-bottom: 0.3rem solid #52F2F2; }
-
-  .underline-red {
-    border-bottom: 0.3rem solid #F25252; }
 
   #resume {
     font-size: 1.75rem; }
@@ -769,6 +765,9 @@ img.icon-social:hover {
 
   .page-wrap {
     margin: 12rem 4rem -12rem 4rem; }
+
+  #footer {
+    padding: 0 4rem; }
 
   .iphone6--half {
     display: none; }
@@ -784,15 +783,15 @@ img.icon-social:hover {
     padding-left: 6rem; } }
 @media all and (max-width: 600px) {
   /* Break flickity and have slides full width? */
-  .greetings br:last-of-type {
-    display: block; }
-
   .section-about {
     padding: 0 4rem; }
 
   .greetings {
     font-size: 3rem;
     line-height: 1.5em; }
+
+  .greetings__line-break {
+    display: inline-block; }
 
   #resume {
     font-size: 2.25rem; }
@@ -822,30 +821,26 @@ img.icon-social:hover {
       transform: translateY(-52%); }
     nav a {
       font-size: 2.25rem; }
-      nav a.active {
-        border-bottom: 0.3rem solid black; }
+
+  .page-wrap {
+    margin: 8rem 4rem -8rem 4rem; }
+
+  #footer,
+  .page-wrap:after {
+    height: 12rem; }
 
   #footer {
-    padding: 0 1.5rem; }
+    height: 8rem; }
     #footer h1 {
-      font-size: 5rem; }
+      font-size: 3rem; }
     #footer li {
       padding-left: 2rem; }
-    #footer ul {
-      height: 3rem; }
-
-  .icon-social {
-    width: 3rem;
-    height: 3rem; }
 
   .iphone6--full {
     margin: 1rem 0; } }
 @media all and (max-width: 560px) {
   #project-tags {
-    display: none; }
-
-  .page-wrap {
-    margin: 12rem 1.5rem -12rem 1.5rem; } }
+    display: none; } }
 @media all and (max-width: 375px) {
   .section-about {
     padding: 0 2rem; }
@@ -872,7 +867,20 @@ img.icon-social:hover {
       transform: translateY(-54%); }
     nav a {
       font-size: 2rem; }
-      nav a.active {
-        border-bottom: 0.3rem solid black; } }
+
+  .page-wrap {
+    margin: 8rem 2rem -8rem 2rem; }
+
+  img.process {
+    padding-top: 2rem; }
+
+  .device-container {
+    margin-top: 2rem; }
+
+  .project-somespacing {
+    padding-top: 0 !important; }
+
+  #footer {
+    padding: 0 2rem; } }
 
 /*# sourceMappingURL=styles.css.map */

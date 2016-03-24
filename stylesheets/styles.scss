@@ -1,8 +1,8 @@
 @import "vendor/bourbon/bourbon";
-@include font-face('audimat', '/fonts/audimat-regular-webfont', $file-formats: eot ttf woff);
-@include font-face('audimat', '/fonts/audimat-bold-webfont', bold, $file-formats: eot ttf woff);
-@include font-face('audimat', '/fonts/audimat-italic-webfont', normal, italic, $file-formats: eot ttf woff);
-@include font-face('audimat', '/fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: eot ttf woff);
+@include font-face('audimat', '../fonts/audimat-regular-webfont', $file-formats: eot ttf woff);
+@include font-face('audimat', '../fonts/audimat-bold-webfont', bold, $file-formats: eot ttf woff);
+@include font-face('audimat', '../fonts/audimat-italic-webfont', normal, italic, $file-formats: eot ttf woff);
+@include font-face('audimat', '../fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: eot ttf woff);
 
 /* colors
 ---------------------------------------------------------------------*/
@@ -29,7 +29,13 @@ html,
 body {
     height: 100%;
     font-size: 62.5%;
+}
+
+html.isMobile,
+body.isMobile {
+    height: auto;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -149,7 +155,7 @@ nav a {
 }
 
 nav a.active {
-    border-bottom: 0.4rem solid black;
+    border-bottom: 0.125em solid black;
 }
 
 nav a:link,
@@ -158,7 +164,7 @@ nav a:visited {
 }
 
 nav ul a:hover {
-    border-bottom: 0.4rem solid black;
+    border-bottom: 0.125em solid black;
 }
 
 
@@ -237,30 +243,30 @@ $gallery-padding: calc(($section-height - $gallery-height) / 2);
     line-height: 1.5em;
 }
 
-.greetings br:last-of-type {
+.greetings__line-break {
     display: none;
 }
 
 .underline-green {
-    border-bottom: 0.5rem solid #52F2F2;
+    border-bottom: 0.125em solid #52F2F2;
 }
 
 .underline-red {
-    border-bottom: 0.5rem solid #F25252;
+    border-bottom: 0.125em solid #F25252;
 }
 
 a.underline-resume,
 a.underline-resume:link,
 a.underline-resume:visited {
     text-decoration: none;
-    border-bottom: 0.3rem solid white;
+    border-bottom: 0.125em solid white;
     color: white;
 }
 
 a.underline-resume:hover,
 a.underline-resume:focus {
     background-color: white;
-    border-bottom: 0.3rem solid black;
+    border-bottom: 0.125em solid black;
     color: black;
 }
 
@@ -272,28 +278,6 @@ a.underline-resume:focus {
     padding: 0 4.16%;
 }
 
-.is-previous img.home:hover,
-.is-previous img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-    cursor: url(/assets/cursor-previous-01.png) 20 20, cell;
-}
-
-.is-selected img.home:hover,
-.is-selected img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-    cursor: url(/assets/cursor-plus-03.png) 20 20, cell;
-}
-
-.is-next img.home:hover,
-.is-next img.home:focus {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-    cursor: url(/assets/cursor-next-01.png) 20 20, cell;
-}
-
-img.home:active {
-    @include transform(translateX(3px) translateY(3px));
-}
-
 img.home {
     width: 50vw;
     max-width: 99rem;
@@ -302,6 +286,32 @@ img.home {
     /*    cursor: alias;*/
     @include transition(all .25s ease-in-out);
 }
+
+img.home:hover {
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
+}
+
+img.home.touchSupport:hover {
+    // box-shadow: 0 0 0 rgba(0, 0, 0, 0.25), 0 0 0 white;
+    box-shadow: none;
+}
+
+img.home:active {
+    @include transform(translateX(3px) translateY(3px));
+}
+
+.is-previous img.home:hover {
+    cursor: url(/assets/cursor-previous-01.png) 20 20, cell;
+}
+
+.is-selected img.home:hover {
+    cursor: url(/assets/cursor-plus-03.png) 20 20, cell;
+}
+
+.is-next img.home:hover {
+    cursor: url(/assets/cursor-next-01.png) 20 20, cell;
+}
+
 
 .modal {
     /*    display: none;*/
@@ -456,7 +466,7 @@ img.home {
 }
 
 #project-title {
-    /*    border-bottom: 0.5rem solid #3f5ca9;*/
+    /*    border-bottom: 0.125em solid #3f5ca9;*/
 }
 
 #project-tags {
@@ -538,14 +548,14 @@ img.project-nospacing {
 .page-wrap a:visited {
     text-decoration: none;
     color: white;
-    border-bottom: 0.2rem solid white;
+    border-bottom: 0.125em solid white;
 }
 
 .page-wrap a:hover,
 .page-wrap a:focus {
     background-color: white;
     color: black;
-    border-bottom: 0.2rem solid black;
+    border-bottom: 0.125em solid black;
 }
 
 .device-container {
@@ -666,7 +676,7 @@ video {
 
 #footer .footer-text a:hover {
     text-decoration: none;
-    border-bottom: 0.6rem solid black;
+    border-bottom: 0.125em solid black;
 }
 
 #footer ul {
@@ -743,12 +753,6 @@ img.icon-social:hover {
         font-size: 5rem;
         line-height: 1.5em;
     }
-    .underline-green {
-        border-bottom: 0.4rem solid #52F2F2;
-    }
-    .underline-red {
-        border-bottom: 0.4rem solid #F25252;
-    }
     #resume {
         font-size: 2.5rem;
     }
@@ -780,15 +784,12 @@ img.icon-social:hover {
 }
 
 @media all and (max-width: 834px) {
+    nav {
+        padding: 0 4rem;
+    }
     .greetings {
         font-size: 3.5rem;
         line-height: 1.5em;
-    }
-    .underline-green {
-        border-bottom: 0.3rem solid #52F2F2;
-    }
-    .underline-red {
-        border-bottom: 0.3rem solid #F25252;
     }
     #resume {
         font-size: 1.75rem;
@@ -801,6 +802,9 @@ img.icon-social:hover {
     }
     .page-wrap {
         margin: 12rem 4rem -12rem 4rem;
+    }
+    #footer {
+        padding: 0 4rem;
     }
     .iphone6--half {
         display: none;
@@ -822,15 +826,15 @@ img.icon-social:hover {
 
 @media all and (max-width: 600px) {
     /* Break flickity and have slides full width? */
-    .greetings br:last-of-type {
-        display: block;
-    }
     .section-about {
         padding: 0 4rem;
     }
     .greetings {
         font-size: 3rem;
         line-height: 1.5em;
+    }
+    .greetings__line-break {
+        display: inline-block;
     }
     #resume {
         font-size: 2.25rem;
@@ -860,26 +864,23 @@ img.icon-social:hover {
         }
         a {
             font-size: 2.25rem;
-            &.active {
-                border-bottom: 0.3rem solid black;
-            }
         }
     }
+    .page-wrap {
+        margin: 8rem 4rem -8rem 4rem;
+    }
+    #footer,
+    .page-wrap:after {
+        height: 12rem;
+    }
     #footer {
-        padding: 0 1.5rem;
+        height: 8rem;
         h1 {
-            font-size: 5rem;
+            font-size: 3rem;
         }
         li {
             padding-left: 2rem;
         }
-        ul {
-            height: 3rem;
-        }
-    }
-    .icon-social {
-        width: 3rem;
-        height: 3rem;
     }
     .iphone6--full {
         margin: 1rem 0;
@@ -889,9 +890,6 @@ img.icon-social:hover {
 @media all and (max-width: 560px) {
     #project-tags {
         display: none;
-    }
-    .page-wrap {
-        margin: 12rem 1.5rem -12rem 1.5rem;
     }
 }
 
@@ -918,9 +916,21 @@ img.icon-social:hover {
         }
         a {
             font-size: 2rem;
-            &.active {
-                border-bottom: 0.3rem solid black;
-            }
         }
+    }
+    .page-wrap {
+        margin: 8rem 2rem -8rem 2rem;
+    }
+    img.process {
+        padding-top: 2rem;
+    }
+    .device-container {
+        margin-top: 2rem;
+    }
+    .project-somespacing {
+        padding-top: 0 !important;
+    }
+    #footer {
+        padding: 0 2rem;
     }
 }

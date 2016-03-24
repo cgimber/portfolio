@@ -5,6 +5,12 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
     isMobile = true;
 // console.log(isMobile);
 
+/* touch screen detection
+-------------------------------------------------------------------------------------*/
+var touchSupport = false;
+if ('ontouchstart' in window || navigator.maxTouchPoints)
+    touchSupport = true;
+
 /* preloader
 -------------------------------------------------------------------------------------*/
 $(window).load(function() {
@@ -21,16 +27,67 @@ $(document).ready(function() {
     var slideLinks = $('a.gallery-link');
 
     if (isMobile) {
-        $('.section').addClass('isMobile');
+        $('html, body, .section').addClass('isMobile');
+        if (touchSupport)
+            $('img.home').addClass('touchSupport');
+
         gallery = $('.gallery').flickity({
             // options
             cellAlign: 'center',
             percentPosition: true,
             prevNextButtons: false,
             pageDots: true,
+            // friction: 0.5,
             wrapAround: true
         });
+
+        // update nav links onload
+        $('ul#section-links a').removeClass('active');
+
+        section = document.URL.split('#')[1];
+
+        if (section) {
+            if (section == 'about')
+                $('#about-link').addClass('active');
+            else
+                $('#work-link').addClass('active');
+        } else {
+            section = 'about';
+            $('#about-link').addClass('active');
+        }
+
+        // update nav links during page scroll
+        $(window).scroll(debounce(function() {
+            var scrollTop = $(window).scrollTop();
+            var $workSection = $('.section--bruinbash');
+            var workPos = $workSection.offset();
+            var currSection;
+
+            if (scrollTop <= (workPos.top - $('nav').height())) {
+                currSection = 'about';
+            } else {
+                currSection = 'work';
+            }
+
+            if (currSection == 'about') {
+                if ($('#work-link').hasClass('active'))
+                    $('#work-link').removeClass('active');
+                $('#about-link').addClass('active');
+            } else {
+                if ($('#about-link').hasClass('active'))
+                    $('#about-link').removeClass('active');
+                $('#work-link').addClass('active');
+            }
+        }, 250));
+
+        // $('.gallery-link').css('position', 'absolute');
+
+        // $(gallery).on('cellSelect', function() {
+        //     // remove focus from gallery
+        //     setTimeout(function() { $('.gallery').blur(); }, 1);
+        // });
     } else {
+
         $('#footer').hide();
         $('#fullpage').fullpage({
             // navigation
@@ -82,13 +139,15 @@ $(document).ready(function() {
                 section = anchorLink;
 
                 $('ul#section-links a').removeClass('active');
-                if (section == "about")
+                if (section == 'about')
                     $('#about-link').addClass('active');
                 else
                     $('#work-link').addClass('active');
 
-                if (index != 1)
-                    updateSlideLinks();
+                updateSlideLinks();
+
+                // $('.gallery-link').css('position', 'absolute');
+
             },
             afterRender: function() {
 
@@ -96,7 +155,7 @@ $(document).ready(function() {
                 if (!section) { // 1) afterLoad hasn't fired yet
                     section = document.URL.split('#')[1];
                     if (!section) // 2) the page was loaded without a page anchor 
-                        section = "about";
+                        section = 'about';
                 }
                 gallery = $('.gallery').flickity({
                     // options
@@ -108,70 +167,71 @@ $(document).ready(function() {
                     wrapAround: true
                 });
 
-                if (section == "about")
+                if (section == 'about')
                     $('#about-link').addClass('active');
+
+                window.setTimeout(updateSlideLinks, 1);
 
             },
             afterResize: function() {},
             afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {},
             onSlideLeave: function(anchorLink, index, slideIndex, direction) {}
         });
-    }
 
-    $('[data-typer-targets]').OrderlyTyper();
+        /* navigate slides with arrow keys
+        ----------------------------------------------------------*/
+        var changeSlide = debounce(function(e) {
+            switch (e.keyCode) {
+                case 37: // LEFT
+                    gallery.flickity('previous', true);
+                    break;
 
-    /* navigate slides with arrow keys
-    --------------------------------------------------------------*/
-    var changeSlide = debounce(function(e) {
-        switch (e.keyCode) {
-            case 37: // LEFT
-                gallery.flickity('previous', true);
-                break;
+                case 39: // RIGHT
+                    gallery.flickity('next', true);
+                    break;
+            }
+        }, 100);
 
-            case 39: // RIGHT
-                gallery.flickity('next', true);
-                break;
+        $('body').keydown(changeSlide);
+
+        /* update hrefs for each slide
+        ----------------------------------------------------------*/
+        function updateSlideLinks() {
+            slideLinks.each(function() {
+                var slide = this.offsetParent;
+                if ($(slide).hasClass('is-selected'))
+                    $(this).prop('href', '/' + section + '.html');
+                else
+                    $(this).prop('href', 'javascript:;');
+            });
         }
-    }, 100);
 
-    $('body').keydown(changeSlide);
-
-
-    /* update hrefs for each slide
-    --------------------------------------------------------------*/
-    function updateSlideLinks() {
-        slideLinks.each(function() {
-            var slide = this.offsetParent;
-            if ($(slide).hasClass('is-selected'))
-                $(this).prop('href', '/' + section + '.html');
-            else
-                $(this).prop('href', 'javascript:;');
+        $(gallery).on('cellSelect', function() {
+            window.setTimeout(updateSlideLinks, 1);
         });
+
+        /* slide specific click behaviour
+        ----------------------------------------------------------*/
+        $('img.home').click(function() {
+            var clickedSlide = this.offsetParent;
+
+            if ($(clickedSlide).hasClass('is-selected')) {
+                // follow link to project page
+            } else if ($(clickedSlide).hasClass('is-next')) {
+                // go to next slide
+                gallery.flickity('next', true);
+                // remove focus from gallery
+                setTimeout(function() { $('.gallery').blur(); }, 1);
+            } else if ($(clickedSlide).hasClass('is-previous')) {
+                // go to previous slide
+                gallery.flickity('previous', true);
+            }
+        });
+
     }
-
-    $(gallery).on('cellSelect', function() {
-        window.setTimeout(updateSlideLinks, 1);
-    });
-
-    /* slide specific click behaviour
-    --------------------------------------------------------------*/
-    $('img.home').click(function() {
-        var clickedSlide = this.offsetParent;
-
-        if ($(clickedSlide).hasClass('is-selected')) {
-            // follow link to project page
-        } else if ($(clickedSlide).hasClass('is-next')) {
-            // go to next slide
-            gallery.flickity('next', true);
-            // remove focus from gallery
-            setTimeout(function() { $('.gallery').blur(); }, 1);
-        } else if ($(clickedSlide).hasClass('is-previous')) {
-            // go to previous slide
-            gallery.flickity('previous', true);
-        }
-    });
-
+    $('[data-typer-targets]').OrderlyTyper();
 });
+
 
 /* add 'is-previous' and 'is-next' classes to Flickity cells
 ------------------------------------------------------------------*/

@@ -4,10 +4,10 @@
 <head>
     <title>Christian Gimber – Portfolio</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <meta name="description" content="Design by Christian Gimber">
     <meta name="author" content="Christian Gimber">
-    <link rel="icon" 
-      href="assets/favicon-01.ico">
+    <link rel="icon" href="assets/favicon-01.ico">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 </head>
@@ -19,12 +19,12 @@
             <!-- "assets/logo-blk-02a.svg" -->
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="481px" height="216px" viewBox="0 0 481 216" enable-background="new 0 0 481 216" xml:space="preserve">
                 <g>
-                    <polygon id="G" points="285.607,107.999 375.82,17.783 375.82,107.999 466.039,107.999 375.82,198.217 	" />
+                    <polygon id="G" points="285.607,107.999 375.82,17.783 375.82,107.999 466.039,107.999 375.82,198.217     " />
                     <g id="S">
-                        <polygon points="195.393,107.999 105.179,107.999 195.393,17.783 		" />
-                        <polygon points="195.393,107.999 195.393,198.217 285.607,107.999 		" />
+                        <polygon points="195.393,107.999 105.179,107.999 195.393,17.783         " />
+                        <polygon points="195.393,107.999 195.393,198.217 285.607,107.999        " />
                     </g>
-                    <polygon id="C" points="105.179,17.783 105.179,198.217 14.961,107.999 	" />
+                    <polygon id="C" points="105.179,17.783 105.179,198.217 14.961,107.999   " />
                 </g>
                 <g display="none">
                     <g display="inline">
@@ -45,17 +45,16 @@
         </a>
         <ul id="section-links">
             <li>
-                <h3><a href="/#about" id="about-link">About</a></h3>
+                <h3><a href="index.html#about" id="about-link">About</a></h3>
             </li>
             <li>
-                <h3><a href="/#bruinbash" id="work-link">Work</a></h3>
+                <h3><a href="index.html#bruinbash" id="work-link">Work</a></h3>
             </li>
             <li>
                 <h3><a href="mailto:csgimber@gmail.com" id="contact-link">Contact</a></h3>
             </li>
         </ul>
     </nav>
-
     <div class="page-wrap" style="color: white">
         <div class="flex-container">
             <h2 id="project-title">Food Trucks of LA</h2>
@@ -85,7 +84,6 @@
                 <img class="process" src="assets/truckmap/project/truckmap-screenshot-04b.png">
             </div>
         </div>
-
         <p class="project-credits">
             <strong>TOOLS:</strong>
             <br>Leaflet.js, Twitter API, JQuery, Bootstrap
@@ -96,16 +94,14 @@
             <br><a href="http://sandbox.idre.ucla.edu">UCLA Technology Sandbox</a>
         </p>
     </div>
-
     <div id="project-arrows">
         <a class="previous" href="ageago.html" onclick='window.location.href = "ageago.html";'>
             <img src="assets/arrow-left-white-01a.svg">
         </a>
-        <a class="next" href="/hamiltongrange.html" onclick='window.location.href = "hamiltongrange.html";'>
+        <a class="next" href="hamiltongrange.html" onclick='window.location.href = "hamiltongrange.html";'>
             <img src="assets/arrow-right-white-01a.svg">
         </a>
     </div>
-
     <div id="footer">
         <div class="footer-text">
             <h1><a href="mailto:csgimber@gmail.com">Get in touch!</a></h1>
@@ -123,29 +119,29 @@
             </li>
         </ul>
     </div>
-
     <!--- eager -->
     <script src="//fast.eager.io/m8c0_FxT5i.js"></script>
-    
     <!--- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
     <!--- slick -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
-
     <!-- Google Analytics -->
     <script>
-        
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-61305502-1', 'auto');
-      ga('send', 'pageview');
-
+    ga('create', 'UA-61305502-1', 'auto');
+    ga('send', 'pageview');
     </script>
-    
     <script src="scripts/project.js"></script>
 </body>
 
