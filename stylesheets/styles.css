@@ -473,22 +473,24 @@ img.home:active {
   padding-top: 4rem;
   line-height: 1.5em;
   letter-spacing: .05rem; }
-
-.project-spacing {
-  padding-top: 4rem; }
-
-.project-somespacing {
-  padding-top: 1rem !important; }
-
-.project-carousel .slick-slide {
-  padding: 0; }
+  .project-body p {
+    margin-top: 1em; }
+    .project-body p:first-of-type {
+      margin-top: 0; }
 
 img.process {
   width: 100%;
   padding-top: 4rem; }
 
-img.project-nospacing {
-  padding-top: 0; }
+.project-carousel.slick-slider {
+  margin-bottom: 0.5rem; }
+  .project-carousel.slick-slider .slick-slide {
+    padding: 0; }
+  .project-carousel.slick-slider .img.process {
+    padding-top: 0; }
+
+.project-video {
+  margin-top: 4rem; }
 
 .embed-container {
   position: relative;
@@ -512,6 +514,10 @@ img.project-nospacing {
   padding-top: 4rem;
   line-height: 1.5em;
   letter-spacing: .05rem; }
+  .project-credits p {
+    margin-top: 1em; }
+    .project-credits p:first-of-type {
+      margin-top: 0; }
 
 .page-wrap {
   max-width: 75rem;
@@ -706,7 +712,7 @@ img.icon-social:hover {
 
 /* MEDIA QUERIES
 =====================================================================*/
-/* hide arrow key modal on mobile
+/* hide modal on mobile
 ---------------------------------------------------------------------*/
 @media only screen and (min-device-width: 320px) and (orientation: portrait), (max-device-width: 1024px) and (orientation: landscape) {
   .modal {
@@ -714,16 +720,14 @@ img.icon-social:hover {
 @media only screen and (min-device-width: 320px) and (orientation: portrait), (max-device-width: 768px) and (orientation: portrait) {
   .modal {
     display: none; } }
-/*
+/* desktop
 ---------------------------------------------------------------------*/
 @media all and (min-width: 1199px) {
   .page-wrap {
-    min-height: 100%;
-    width: 86rem; } }
+    min-height: 100%; } }
 @media all and (max-width: 1122px) {
   .greetings {
-    font-size: 5rem;
-    line-height: 1.5em; }
+    font-size: 5rem; }
 
   #resume {
     font-size: 2.5rem; } }
@@ -741,30 +745,27 @@ img.icon-social:hover {
     right: 2rem; } }
 @media all and (max-width: 962px) {
   .greetings {
-    font-size: 4.2rem;
-    line-height: 1.5em; }
+    font-size: 4rem; }
 
   #resume {
-    font-size: 2.1rem; } }
+    font-size: 2rem; } }
 @media all and (max-width: 834px) {
-  nav {
+  .section-about {
     padding: 0 4rem; }
 
-  .greetings {
-    font-size: 3.5rem;
-    line-height: 1.5em; }
-
-  #resume {
-    font-size: 1.75rem; }
-
   #project-arrows a.previous img {
-    left: 1rem; }
+    left: 0; }
 
   #project-arrows a.next img {
-    right: 1rem; }
+    right: 0; }
 
   .page-wrap {
     margin: 12rem 4rem -12rem 4rem; }
+
+  nav {
+    padding: 0 4rem; }
+    nav li {
+      padding-left: 6rem; }
 
   #footer {
     padding: 0 4rem; }
@@ -778,23 +779,19 @@ img.icon-social:hover {
     width: calc(1.136*27rem*5/6);
     height: calc(1.136*51.75rem*5/6);
     background-size: calc(1.136*27rem*5/6) calc(1.136*51.75rem*5/6) !important; } }
-@media all and (max-width: 669px) {
-  nav li {
-    padding-left: 6rem; } }
-@media all and (max-width: 600px) {
-  /* Break flickity and have slides full width? */
-  .section-about {
-    padding: 0 4rem; }
-
-  .greetings {
-    font-size: 3rem;
-    line-height: 1.5em; }
-
+@media all and (max-width: 719px) {
   .greetings__line-break {
-    display: inline-block; }
+    display: inline-block; } }
+/* mobile
+---------------------------------------------------------------------*/
+@media all and (max-width: 600px) {
+  .greetings,
+  #project-title {
+    font-size: 3rem; }
 
-  #resume {
-    font-size: 2.25rem; }
+  #project-arrows a.previous img,
+  #project-arrows a.next img {
+    width: 4rem; }
 
   .gallery-cell {
     padding: 0 4rem; }
@@ -871,16 +868,30 @@ img.icon-social:hover {
   .page-wrap {
     margin: 8rem 2rem -8rem 2rem; }
 
+  .project-body,
+  .project-credits {
+    padding-top: 2rem; }
+
+  #project-arrows a.previous img {
+    left: -1rem; }
+
+  #project-arrows a.next img {
+    right: -1rem; }
+
   img.process {
     padding-top: 2rem; }
 
   .device-container {
     margin-top: 2rem; }
 
-  .project-somespacing {
-    padding-top: 0 !important; }
+  .project-video {
+    margin-top: 2rem; }
 
   #footer {
-    padding: 0 2rem; } }
+    padding: 0 2rem; }
+
+  #footer,
+  .page-wrap:after {
+    height: 10rem; } }
 
 /*# sourceMappingURL=styles.css.map */

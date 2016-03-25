@@ -175,9 +175,9 @@ nav ul a:hover {
 /* mobile
 ---------------------------------------------------------------------*/
 
-$section-height: calc((100vh - 5rem) / 2);
-$gallery-height: calc((2/3)*(100vw - 8rem));
-$gallery-padding: calc(($section-height - $gallery-height) / 2);
+// $section-height: calc((100vh - 5rem) / 2);
+// $gallery-height: calc((2/3)*(100vw - 8rem));
+// $gallery-padding: calc(($section-height - $gallery-height) / 2);
 .section.isMobile {
     position: relative;
     &.section--about {
@@ -207,10 +207,6 @@ $gallery-padding: calc(($section-height - $gallery-height) / 2);
     padding-bottom: 5vh;
 }
 
-// .section.isMobile:first-of-type {
-//     padding-top: 5rem; // nav height
-// }
-
 /* page dots won't show on desktop*/
 
 .flickity-page-dots {
@@ -227,7 +223,6 @@ $gallery-padding: calc(($section-height - $gallery-height) / 2);
 .flickity-page-dots .dot.is-selected {
     background: rgba(255, 255, 255, 0.75);
 }
-
 
 /* desktop
 ---------------------------------------------------------------------*/
@@ -482,18 +477,12 @@ img.home:active {
     padding-top: 4rem;
     line-height: 1.5em;
     letter-spacing: .05rem;
-}
-
-.project-spacing {
-    padding-top: 4rem;
-}
-
-.project-somespacing {
-    padding-top: 1rem !important;
-}
-
-.project-carousel .slick-slide {
-    padding: 0;
+    p {
+        margin-top: 1em;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
 }
 
 img.process {
@@ -501,8 +490,18 @@ img.process {
     padding-top: 4rem;
 }
 
-img.project-nospacing {
-    padding-top: 0;
+.project-carousel.slick-slider {
+    margin-bottom: 0.5rem;
+    .slick-slide {
+        padding: 0;
+    }
+    .img.process {
+        padding-top: 0;
+    }
+}
+
+.project-video {
+    margin-top: 4rem;
 }
 
 .embed-container {
@@ -529,6 +528,12 @@ img.project-nospacing {
     padding-top: 4rem;
     line-height: 1.5em;
     letter-spacing: .05rem;
+    p {
+        margin-top: 1em;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
 }
 
 .page-wrap {
@@ -720,7 +725,7 @@ img.icon-social:hover {
 =====================================================================*/
 
 
-/* hide arrow key modal on mobile
+/* hide modal on mobile
 ---------------------------------------------------------------------*/
 
 @media only screen and (min-device-width: 320px) and (orientation: portrait),
@@ -738,20 +743,19 @@ img.icon-social:hover {
 }
 
 
-/*
+/* desktop
 ---------------------------------------------------------------------*/
 
 @media all and (min-width: 1199px) {
     .page-wrap {
         min-height: 100%;
-        width: 86rem;
+        // width: 86rem;
     }
 }
 
 @media all and (max-width: 1122px) {
     .greetings {
         font-size: 5rem;
-        line-height: 1.5em;
     }
     #resume {
         font-size: 2.5rem;
@@ -775,33 +779,31 @@ img.icon-social:hover {
 
 @media all and (max-width: 962px) {
     .greetings {
-        font-size: 4.2rem;
-        line-height: 1.5em;
+        font-size: 4rem;
     }
     #resume {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
 }
 
 @media all and (max-width: 834px) {
-    nav {
+    .section-about {
         padding: 0 4rem;
     }
-    .greetings {
-        font-size: 3.5rem;
-        line-height: 1.5em;
-    }
-    #resume {
-        font-size: 1.75rem;
-    }
     #project-arrows a.previous img {
-        left: 1rem;
+        left: 0;
     }
     #project-arrows a.next img {
-        right: 1rem;
+        right: 0;
     }
     .page-wrap {
         margin: 12rem 4rem -12rem 4rem;
+    }
+    nav {
+        padding: 0 4rem;
+        li {
+            padding-left: 6rem;
+        }
     }
     #footer {
         padding: 0 4rem;
@@ -818,26 +820,22 @@ img.icon-social:hover {
     }
 }
 
-@media all and (max-width: 669px) {
-    nav li {
-        padding-left: 6rem;
-    }
-}
-
-@media all and (max-width: 600px) {
-    /* Break flickity and have slides full width? */
-    .section-about {
-        padding: 0 4rem;
-    }
-    .greetings {
-        font-size: 3rem;
-        line-height: 1.5em;
-    }
+@media all and (max-width: 719px) {
     .greetings__line-break {
         display: inline-block;
     }
-    #resume {
-        font-size: 2.25rem;
+}
+
+/* mobile
+---------------------------------------------------------------------*/
+@media all and (max-width: 600px) {
+    .greetings,
+    #project-title {
+        font-size: 3rem;
+    }
+    #project-arrows a.previous img,
+    #project-arrows a.next img {
+        width: 4rem;
     }
     .gallery-cell {
         padding: 0 4rem;
@@ -921,16 +919,30 @@ img.icon-social:hover {
     .page-wrap {
         margin: 8rem 2rem -8rem 2rem;
     }
+    .project-body,
+    .project-credits {
+        padding-top: 2rem;
+    }
+    #project-arrows a.previous img {
+        left: -1rem;
+    }
+    #project-arrows a.next img {
+        right: -1rem;
+    }
     img.process {
         padding-top: 2rem;
     }
     .device-container {
         margin-top: 2rem;
     }
-    .project-somespacing {
-        padding-top: 0 !important;
-    }
+    .project-video {
+        margin-top: 2rem;
+    }    
     #footer {
         padding: 0 2rem;
+    }
+    #footer,
+    .page-wrap:after {
+        height: 10rem;
     }
 }
