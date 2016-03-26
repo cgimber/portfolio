@@ -28,6 +28,9 @@ $(document).ready(function() {
 
     if (isMobile) {
         $('html, body, .section').addClass('isMobile');
+        $('.section--about').attr('id', 'about');
+        $('.section--bruinbash').attr('id', 'bruinbash');
+
         if (touchSupport)
             $('img.home').addClass('touchSupport');
 
@@ -80,12 +83,22 @@ $(document).ready(function() {
             }
         }, 250));
 
-        // $('.gallery-link').css('position', 'absolute');
+        // smooth scroll for anchors on the same page (#about and #bruinbash)
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 750);
+                        return false;
+                    }
+                }
+            });
+        });
 
-        // $(gallery).on('cellSelect', function() {
-        //     // remove focus from gallery
-        //     setTimeout(function() { $('.gallery').blur(); }, 1);
-        // });
     } else {
 
         $('#footer').hide();
