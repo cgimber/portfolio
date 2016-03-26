@@ -44,7 +44,7 @@ body.isMobile {
 body {
   margin: 0;
   font-family: 'audimat';
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: normal; }
 
 h1,
@@ -73,10 +73,12 @@ h2 {
   -moz-margin-before: 0;
   -moz-margin-after: 0;
   margin-before: 0;
-  margin-after: 0; }
+  margin-after: 0;
+  letter-spacing: 0.0125em; }
 
 h3 {
-  font-size: 3rem; }
+  font-size: 3rem;
+  letter-spacing: 0.025em; }
 
 p {
   -webkit-margin-before: 0;
@@ -465,14 +467,14 @@ img.home:active {
   text-align: right;
   font-weight: bold;
   line-height: 2rem;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05em;
   align-self: center; }
 
 .project-body {
-  max-width: 55rem;
+  max-width: 50rem;
   padding-top: 4rem;
   line-height: 1.5em;
-  letter-spacing: .05rem; }
+  letter-spacing: 0.05em; }
   .project-body p {
     margin-top: 1em; }
     .project-body p:first-of-type {
@@ -513,7 +515,7 @@ img.process {
 .project-credits {
   padding-top: 4rem;
   line-height: 1.5em;
-  letter-spacing: .05rem; }
+  letter-spacing: 0.05em; }
   .project-credits p {
     margin-top: 1em; }
     .project-credits p:first-of-type {
@@ -785,9 +787,18 @@ img.icon-social:hover {
 /* mobile
 ---------------------------------------------------------------------*/
 @media all and (max-width: 600px) {
+  body {
+    font-size: 1.4rem; }
+
+  .project-body {
+    letter-spacing: 0.05em; }
+
   .greetings,
   #project-title {
     font-size: 3rem; }
+
+  #project-tags {
+    display: none; }
 
   #project-arrows a.previous img,
   #project-arrows a.next img {
@@ -835,9 +846,6 @@ img.icon-social:hover {
 
   .iphone6--full {
     margin: 1rem 0; } }
-@media all and (max-width: 560px) {
-  #project-tags {
-    display: none; } }
 @media all and (max-width: 375px) {
   .section-about {
     padding: 0 2rem; }
