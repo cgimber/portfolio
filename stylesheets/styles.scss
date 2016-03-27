@@ -1,4 +1,8 @@
 @import "vendor/bourbon/bourbon";
+
+/* fonts
+---------------------------------------------------------------------*/
+
 @include font-face('audimat', '../fonts/audimat-regular-webfont', $file-formats: eot ttf woff);
 @include font-face('audimat', '../fonts/audimat-bold-webfont', bold, $file-formats: eot ttf woff);
 @include font-face('audimat', '../fonts/audimat-italic-webfont', normal, italic, $file-formats: eot ttf woff);
@@ -13,6 +17,9 @@ $juggle: #14A697;
 $ageago: #f2bb13;
 $localsonly: #F29D35;
 $sozo: #f25151;
+
+/*-------------------------------------------------------------------*/
+
 *,
 *:after,
 *:before {
@@ -157,7 +164,6 @@ nav a {
 //         top: 1px;
 //     }
 // }
-
 nav #logo {
     position: absolute;
     margin: 0;
@@ -238,7 +244,7 @@ html.isMobile .section .gallery {
 }
 
 
-/* page dots won't show on desktop*/
+/* page dots won't show on desktop */
 
 .flickity-page-dots {
     bottom: 3vh;
@@ -305,7 +311,6 @@ a.underline-resume {
 //         color: white;
 //     }
 // }
-
 #resume {
     text-align: left;
 }
