@@ -27,12 +27,12 @@ $(document).ready(function() {
     var slideLinks = $('a.gallery-link');
 
     if (isMobile) {
-        $('html, body, .section').addClass('isMobile');
+        $('html').addClass('isMobile');
         $('.section--about').attr('id', 'about');
         $('.section--bruinbash').attr('id', 'bruinbash');
 
         if (touchSupport)
-            $('img.home').addClass('touchSupport');
+            $('html').addClass('touchSupport');
 
         gallery = $('.gallery').flickity({
             // options

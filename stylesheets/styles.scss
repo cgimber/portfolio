@@ -31,11 +31,15 @@ body {
     font-size: 62.5%;
 }
 
-html.isMobile,
-body.isMobile {
+html.isMobile {
     height: auto;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    body {
+        height: auto;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 body {
@@ -43,6 +47,14 @@ body {
     font-family: 'audimat';
     font-size: 1.8rem;
     font-weight: normal;
+}
+
+::-moz-selection {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 h1,
@@ -118,9 +130,33 @@ nav ul {
 nav li {
     color: black;
     padding-left: 8rem;
-    @include transition(padding .5s ease-in-out);
+    @include transition(all .25s ease-in-out);
     display: inline-block;
 }
+
+nav a {
+    &.active {
+        border-bottom: 0.125em solid black;
+    }
+    &:link,
+    &:visited {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    &:hover,
+    &:active {
+        border-bottom: 0.125em solid black;
+    }
+}
+
+// html.touchSupport nav a {
+//     &:hover,
+//     &:active {
+//         position: relative;
+//         top: 1px;
+//     }
+// }
 
 nav #logo {
     position: absolute;
@@ -129,44 +165,36 @@ nav #logo {
     @include transform(translateY(-50%));
     display: block;
     height: 3.2rem;
+    border-bottom: none !important;
 }
 
 #logo img {
     height: 3.2rem;
 }
 
-#logo img:hover {
-    /*    opacity: .5;*/
-}
-
 #logo svg {
     height: 3.2rem;
     width: 7.1rem;
-    @include transition(all .25s linear);
+    @include transition(all .25s ease-in-out);
+    &:link,
+    &:visited {
+        fill: black;
+        stroke: none;
+    }
+    &:hover,
+    &:active {
+        fill: none;
+        stroke: black;
+        stroke-width: 20;
+    }
 }
 
-#logo svg:hover {
-    fill: none;
-    stroke: black;
-    stroke-width: 20;
-}
-
-nav a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-nav a.active {
-    border-bottom: 0.125em solid black;
-}
-
-nav a:link,
-nav a:visited {
-    color: black;
-}
-
-nav ul a:hover {
-    border-bottom: 0.125em solid black;
+html.touchSupport #logo svg {
+    &:hover,
+    &:active {
+        fill: black;
+        stroke: none;
+    }
 }
 
 
@@ -180,7 +208,7 @@ nav ul a:hover {
 // $section-height: calc((100vh - 5rem) / 2);
 // $gallery-height: calc((2/3)*(100vw - 8rem));
 // $gallery-padding: calc(($section-height - $gallery-height) / 2);
-.section.isMobile {
+html.isMobile .section {
     position: relative;
     &.section--about {
         height: calc(((100vh - 5rem) / 2) + 5rem);
@@ -204,10 +232,11 @@ nav ul a:hover {
     }
 }
 
-.section.isMobile .gallery {
+html.isMobile .section .gallery {
     padding-top: 9vh;
     padding-bottom: 5vh;
 }
+
 
 /* page dots won't show on desktop*/
 
@@ -225,6 +254,7 @@ nav ul a:hover {
 .flickity-page-dots .dot.is-selected {
     background: rgba(255, 255, 255, 0.75);
 }
+
 
 /* desktop
 ---------------------------------------------------------------------*/
@@ -252,20 +282,29 @@ nav ul a:hover {
     border-bottom: 0.125em solid #F25252;
 }
 
-a.underline-resume,
-a.underline-resume:link,
-a.underline-resume:visited {
-    text-decoration: none;
-    border-bottom: 0.125em solid white;
-    color: white;
+a.underline-resume {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        border-bottom: 0.125em solid white;
+        color: white;
+    }
+    &:hover,
+    &:active {
+        background-color: white;
+        border-bottom: 0.125em solid black;
+        color: black;
+    }
 }
 
-a.underline-resume:hover,
-a.underline-resume:focus {
-    background-color: white;
-    border-bottom: 0.125em solid black;
-    color: black;
-}
+// html.touchSupport a.underline-resume {
+//     &:hover,
+//     &:active {
+//         background-color: transparent;
+//         border-bottom: 0.125em solid white;
+//         color: white;
+//     }
+// }
 
 #resume {
     text-align: left;
@@ -282,19 +321,18 @@ img.home {
     box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
     /*    cursor: alias;*/
     @include transition(all .25s ease-in-out);
+    &:hover {
+        box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
+    }
+    &:active {
+        @include transform(translateX(3px) translateY(3px));
+    }
 }
 
-img.home:hover {
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
-}
-
-img.home.touchSupport:hover {
-    // box-shadow: 0 0 0 rgba(0, 0, 0, 0.25), 0 0 0 white;
-    box-shadow: none;
-}
-
-img.home:active {
-    @include transform(translateX(3px) translateY(3px));
+html.touchSupport img.home {
+    &:hover {
+        box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
+    }
 }
 
 .is-previous img.home:hover {
@@ -308,7 +346,6 @@ img.home:active {
 .is-next img.home:hover {
     cursor: url(/assets/cursor-next-01.png) 20 20, cell;
 }
-
 
 .modal {
     /*    display: none;*/
@@ -559,7 +596,7 @@ img.process {
 }
 
 .page-wrap a:hover,
-.page-wrap a:focus {
+.page-wrap a:active {
     background-color: white;
     color: black;
     border-bottom: 0.125em solid black;
@@ -666,54 +703,86 @@ video {
     height: 16rem;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    .footer-text a {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: black;
+        }
+        &:hover,
+        &:active {
+            text-decoration: none;
+            border-bottom: 0.125em solid black;
+        }
+    }
+    ul.footer-icons {
+        height: 4rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+    }
+    li {
+        height: 4rem;
+        padding: 0 2rem;
+        display: inline-block;
+        &:first-of-type {
+            padding-left: 0;
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
 }
 
-#footer .footer-text {
-    position: absolute;
-    top: 50%;
-    @include transform(translateY(-50%));
-    display: block;
-}
-
-#footer .footer-text a,
-#footer .footer-text a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-#footer .footer-text a:hover {
-    text-decoration: none;
-    border-bottom: 0.125em solid black;
-}
-
-#footer ul {
-    height: 4rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
-    float: right;
-    top: 50%;
-    @include transform(translateY(-50%));
-    display: block;
-}
-
-#footer li {
-    height: 4rem;
-    padding-left: 4rem;
-    display: inline-block;
-}
-
-.icon-social {
+svg.icon-social {
     width: 4rem;
     height: 4rem;
-    background-color: black;
+    rect {
+        @include transition(all .25s ease-in-out);
+    }
+    path {
+        @include transition(all .25s ease-in-out);
+    }
+    &:link,
+    &:visited {
+        rect {
+            fill: black;
+            stroke: none;
+        }
+        path {
+            fill: white;
+        }
+    }
+    &:hover,
+    &:active {
+        rect {
+            fill: none;
+            stroke: black;
+            stroke-width: 15;
+        }
+        path {
+            fill: black;
+        }
+    }
 }
 
-img.icon-social:hover {
-    @include filter(opacity(.7));
-}
-
+// html.touchSupport svg.icon-social {
+//     &:hover,
+//     &:active {
+//         rect {
+//             fill: black;
+//         }
+//         path {
+//             fill: white;
+//         }
+//     }
+// }
 
 /* IE 6 */
 
@@ -826,10 +895,21 @@ img.icon-social:hover {
     .greetings__line-break {
         display: inline-block;
     }
+    #footer {
+        .footer-text {
+            display: none;
+        }
+        ul.footer-icons {
+            width: 100%;
+            @include justify-content(center);
+        }
+    }
 }
+
 
 /* mobile
 ---------------------------------------------------------------------*/
+
 @media all and (max-width: 600px) {
     body {
         font-size: 1.4rem;
@@ -942,9 +1022,12 @@ img.icon-social:hover {
     }
     .project-video {
         margin-top: 2rem;
-    }    
+    }
     #footer {
         padding: 0 2rem;
+        li {
+            padding: 0 1rem;
+        }
     }
     #footer,
     .page-wrap:after {
