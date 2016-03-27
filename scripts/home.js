@@ -81,7 +81,7 @@ $(document).ready(function() {
                     $('#about-link').removeClass('active');
                 $('#work-link').addClass('active');
             }
-        }, 250));
+        }, 100));
 
         // smooth scroll for anchors on the same page (#about and #bruinbash)
         $(function() {
@@ -90,9 +90,16 @@ $(document).ready(function() {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
-                        $('html, body').animate({
-                            scrollTop: target.offset().top
-                        }, 750);
+                        var isProject = $(target).is('#bruinbash');
+                        if (isProject) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top - 50
+                            }, 750);
+                        } else {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 750);
+                        }
                         return false;
                     }
                 }
