@@ -10,6 +10,14 @@
     <link rel="icon" href="assets/favicon-01.ico">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+    <!--- eager -->
+    <script src="//fast.eager.io/m8c0_FxT5i.js"></script>
+    <!--- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--- slick -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
+    <!-- project -->
+    <script src="scripts/project.js"></script>
 </head>
 
 <body>
@@ -66,10 +74,34 @@
             <p>After nailing down a functional spec with the rest of the team, I outlined user flows for business owners and customers. I used Marvel to create <a href="https://marvelapp.com/hac09e" target="_blank">prototypes</a> and collect feedback. After several iterations, I exported all the assets and created a style guide to make the lead developer's life easier.
             </p>
         </div>
-        <img class="process" src="assets/sozo/project/sozo-mockups-lrg.png">
-        <img class="process" src="assets/sozo/project/sozo-flow-lrg.jpg">
-        <img class="process" src="assets/sozo/project/sozo-wires-lrg.jpg">
-        <img class="process" src="assets/sozo/project/sozo-screenflow-lrg.png">
+        <!-- <img class="process" src="assets/sozo/project/sozo-mockups-lrg.png"> -->
+        <img class="process" src="assets/sozo/project/sozo-mockups-lrg.png"
+            srcset="assets/sozo/project/sozo-mockups-sml.png 750w,
+                    assets/sozo/project/sozo-mockups-med.png 1000w,
+                    assets/sozo/project/sozo-mockups-lrg.png 1500w,
+                    assets/sozo/project/sozo-mockups-lrgr.png 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
+        <!-- <img class="process" src="assets/sozo/project/sozo-flow-lrg.jpg"> -->
+        <img class="process" src="assets/sozo/project/sozo-flow-lrg.jpg"
+            srcset="assets/sozo/project/sozo-flow-sml.jpg 750w,
+                    assets/sozo/project/sozo-flow-med.jpg 1000w,
+                    assets/sozo/project/sozo-flow-lrg.jpg 1500w,
+                    assets/sozo/project/sozo-flow-lrgr.jpg 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
+        <!-- <img class="process" src="assets/sozo/project/sozo-wires-lrg.jpg"> -->
+        <img class="process" src="assets/sozo/project/sozo-wires-lrg.jpg"
+            srcset="assets/sozo/project/sozo-wires-sml.jpg 750w,
+                    assets/sozo/project/sozo-wires-med.jpg 1000w,
+                    assets/sozo/project/sozo-wires-lrg.jpg 1500w,
+                    assets/sozo/project/sozo-wires-lrgr.jpg 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
+        <!-- <img class="process" src="assets/sozo/project/sozo-screenflow-lrg.png"> -->
+        <img class="process" src="assets/sozo/project/sozo-screenflow-lrg.png"
+            srcset="assets/sozo/project/sozo-screenflow-sml.png 750w,
+                    assets/sozo/project/sozo-screenflow-med.png 1000w,
+                    assets/sozo/project/sozo-screenflow-lrg.png 1500w,
+                    assets/sozo/project/sozo-screenflow-lrgr.png 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
         <div class="device-container device-container--sozo">
             <div class="iphone6--half iphone6--blk">
                 <!-- Video Partial -->
@@ -91,19 +123,38 @@
                 </video>
                 <![endif]>
             </div>
-            <div class="iphone6--full iphone6--wht">
+            <!-- <div class="iphone6--full iphone6--wht"> -->
                 <!-- Video Partial -->
                 <!--[if IE]><video preload="auto" style="background-image: url(assets/device-frames/iphone-shell-flat-wht@1x.png);" loop muted> <source src="assets/sozo/project/sozo-v3-demo.webm" type="video/webm; codecs=vp9, opus"> <source src="assets/sozo/project/sozo-v3-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2"></video><![endif]-->
                 <![if !IE]>
-                <video preload="auto" poster="assets/sozo/project/sozo-v3-demo.jpg" autoplay loop muted>
+                <!-- <video preload="auto" poster="assets/sozo/project/sozo-v3-demo.jpg" autoplay loop muted>
                     <source src="assets/sozo/project/sozo-v3-demo.webm" type="video/webm; codecs=vp9, opus">
                     <source src="assets/sozo/project/sozo-v3-demo.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2">
-                </video>
+                </video> -->
                 <![endif]>
-            </div>
+            <!-- </div> -->
         </div>
-        <img class="process" src="assets/sozo/project/sozo-scrim-lrg-01.jpg">
-        <img class="process" src="assets/sozo/project/sozo-scrim-lrg-02.jpg">
+        <!-- remove videos when not visible -->
+        <script type="text/javascript">
+        if ($(window).width() <= 834) {
+            // $('video').removeAttr('autoplay').attr('preload', 'none');
+            $('video').remove();
+        }
+        </script>
+        <!-- <img class="process" src="assets/sozo/project/sozo-scrim-lrg-01.jpg"> -->
+        <img class="process" src="assets/sozo/project/sozo-scrim-lrg-01.jpg"
+            srcset="assets/sozo/project/sozo-scrim-sml-01.jpg 750w,
+                    assets/sozo/project/sozo-scrim-med-01.jpg 1000w,
+                    assets/sozo/project/sozo-scrim-lrg-01.jpg 1500w,
+                    assets/sozo/project/sozo-scrim-lrgr-01.jpg 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
+        <!-- <img class="process" src="assets/sozo/project/sozo-scrim-lrg-02.jpg"> -->
+        <img class="process" src="assets/sozo/project/sozo-scrim-lrg-02.jpg"
+            srcset="assets/sozo/project/sozo-scrim-sml-02.jpg 750w,
+                    assets/sozo/project/sozo-scrim-med-02.jpg 1000w,
+                    assets/sozo/project/sozo-scrim-lrg-02.jpg 1500w,
+                    assets/sozo/project/sozo-scrim-lrgr-02.jpg 2000w"
+            sizes="(min-width: 835px) 75rem, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
         <div class="project-credits">
             <p>
                 <strong>TOOLS:</strong>
@@ -155,12 +206,6 @@
             </li>
         </ul>
     </div>
-    <!--- eager -->
-    <script src="//fast.eager.io/m8c0_FxT5i.js"></script>
-    <!--- jQuery -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--- slick -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
     <!-- Google Analytics -->
     <script>
     (function(i, s, o, g, r, a, m) {
@@ -178,7 +223,6 @@
     ga('create', 'UA-61305502-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <script src="scripts/project.js"></script>
 </body>
 
 </html>

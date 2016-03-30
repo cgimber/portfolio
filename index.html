@@ -8,12 +8,23 @@
     <meta name="description" content="Design by Christian Gimber">
     <meta name="author" content="Christian Gimber">
     <link rel="icon" href="assets/favicon-01.ico">
-    <!-- fullPage -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/jquery.fullPage.css">
-    <!-- Flickity -->
     <link rel="stylesheet" href="https://npmcdn.com/flickity@1.1/dist/flickity.min.css">
-    <!-- Default -->
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+    <!--- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--- jQuery Debounce -->
+    <script src="scripts/jquery-debounce.js"></script>
+    <!--- fullPage -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.easings.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.slimscroll.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/jquery.fullPage.min.js"></script>
+    <!--- flickity -->
+    <script src="https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
+    <!-- jQuery Typer -->
+    <script src="scripts/jquery.OrderlyTyper.js"></script>
+    <!-- home -->
+    <script src="scripts/home.js"></script>
 </head>
 
 <body>
@@ -79,17 +90,35 @@
             <div class="gallery">
                 <div class="gallery-cell">
                     <a class="gallery-link" href="bruinbash.html">
-                        <img class="home" src="assets/bb14/home/bb14-slide-01.png">
+                        <!-- <img class="home" src="assets/bb14/home/bb14-slide-01.png"> -->
+                        <img class="home" src="assets/bb14/home/bb14-slide-01-lrg.jpg"
+                            srcset="assets/bb14/home/bb14-slide-01-sml.jpg 750w,
+                                    assets/bb14/home/bb14-slide-01-med.jpg 1000w,
+                                    assets/bb14/home/bb14-slide-01-lrg.jpg 1500w,
+                                    assets/bb14/home/bb14-slide-01-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="bruinbash.html">
-                        <img class="home" src="assets/bb14/home/bb14-slide-02.png">
+                        <!-- <img class="home" src="assets/bb14/home/bb14-slide-02.png"> -->
+                        <img class="home" src="assets/bb14/home/bb14-slide-02-lrg.jpg"
+                            srcset="assets/bb14/home/bb14-slide-02-sml.jpg 750w,
+                                    assets/bb14/home/bb14-slide-02-med.jpg 1000w,
+                                    assets/bb14/home/bb14-slide-02-lrg.jpg 1500w,
+                                    assets/bb14/home/bb14-slide-02-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="bruinbash.html">
-                        <img class="home" src="assets/bb14/home/bb14-slide-03.png">
+                        <!-- <img class="home" src="assets/bb14/home/bb14-slide-03.png"> -->
+                        <img class="home" src="assets/bb14/home/bb14-slide-03-lrg.jpg"
+                            srcset="assets/bb14/home/bb14-slide-03-sml.jpg 750w,
+                                    assets/bb14/home/bb14-slide-03-med.jpg 1000w,
+                                    assets/bb14/home/bb14-slide-03-lrg.jpg 1500w,
+                                    assets/bb14/home/bb14-slide-03-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
             </div>
@@ -98,17 +127,35 @@
             <div class="gallery">
                 <div class="gallery-cell">
                     <a class="gallery-link" href="juggle.html">
-                        <img class="home" src="assets/juggle/home/juggle-slide-01.png">
+                        <!-- <img class="home" src="assets/juggle/home/juggle-slide-01.png"> -->
+                        <img class="home" src="assets/juggle/home/juggle-slide-01-lrg.png"
+                            srcset="assets/juggle/home/juggle-slide-01-sml.png 750w,
+                                    assets/juggle/home/juggle-slide-01-med.png 1000w,
+                                    assets/juggle/home/juggle-slide-01-lrg.png 1500w,
+                                    assets/juggle/home/juggle-slide-01-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="juggle.html">
-                        <img class="home" src="assets/juggle/home/juggle-slide-02.png">
+                        <!-- <img class="home" src="assets/juggle/home/juggle-slide-02.png"> -->
+                        <img class="home" src="assets/juggle/home/juggle-slide-02-lrg.png"
+                            srcset="assets/juggle/home/juggle-slide-02-sml.png 750w,
+                                    assets/juggle/home/juggle-slide-02-med.png 1000w,
+                                    assets/juggle/home/juggle-slide-02-lrg.png 1500w,
+                                    assets/juggle/home/juggle-slide-02-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="juggle.html">
-                        <img class="home" src="assets/juggle/home/juggle-slide-03.png">
+                        <!-- <img class="home" src="assets/juggle/home/juggle-slide-03.png"> -->
+                        <img class="home" src="assets/juggle/home/juggle-slide-03-lrg.png"
+                            srcset="assets/juggle/home/juggle-slide-03-sml.png 750w,
+                                    assets/juggle/home/juggle-slide-03-med.png 1000w,
+                                    assets/juggle/home/juggle-slide-03-lrg.png 1500w,
+                                    assets/juggle/home/juggle-slide-03-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
             </div>
@@ -117,17 +164,35 @@
             <div class="gallery">
                 <div class="gallery-cell">
                     <a class="gallery-link" href="ageago.html">
-                        <img class="home" src="assets/ageago/home/ageago-slide-01.png">
+                        <!-- <img class="home" src="assets/ageago/home/ageago-slide-01.png"> -->
+                        <img class="home" src="assets/ageago/home/ageago-slide-01-lrg.png"
+                            srcset="assets/ageago/home/ageago-slide-01-sml.png 750w,
+                                    assets/ageago/home/ageago-slide-01-med.png 1000w,
+                                    assets/ageago/home/ageago-slide-01-lrg.png 1500w,
+                                    assets/ageago/home/ageago-slide-01-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="ageago.html">
-                        <img class="home" src="assets/ageago/home/ageago-slide-02.png">
+                        <!-- <img class="home" src="assets/ageago/home/ageago-slide-02.png"> -->
+                        <img class="home" src="assets/ageago/home/ageago-slide-02-lrg.png"
+                            srcset="assets/ageago/home/ageago-slide-02-sml.png 750w,
+                                    assets/ageago/home/ageago-slide-02-med.png 1000w,
+                                    assets/ageago/home/ageago-slide-02-lrg.png 1500w,
+                                    assets/ageago/home/ageago-slide-02-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="ageago.html">
-                        <img class="home" src="assets/ageago/home/ageago-slide-03.png">
+                        <!-- <img class="home" src="assets/ageago/home/ageago-slide-03.png"> -->
+                        <img class="home" src="assets/ageago/home/ageago-slide-03-lrg.png"
+                            srcset="assets/ageago/home/ageago-slide-03-sml.png 750w,
+                                    assets/ageago/home/ageago-slide-03-med.png 1000w,
+                                    assets/ageago/home/ageago-slide-03-lrg.png 1500w,
+                                    assets/ageago/home/ageago-slide-03-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
             </div>
@@ -136,17 +201,35 @@
             <div class="gallery">
                 <div class="gallery-cell">
                     <a class="gallery-link" href="localsonly.html">
-                        <img class="home" src="assets/locals/home/locals-slide-01.png">
+                        <!-- <img class="home" src="assets/locals/home/locals-slide-01.png"> -->
+                        <img class="home" src="assets/locals/home/locals-slide-01-lrg.jpg"
+                            srcset="assets/locals/home/locals-slide-01-sml.jpg 750w,
+                                    assets/locals/home/locals-slide-01-med.jpg 1000w,
+                                    assets/locals/home/locals-slide-01-lrg.jpg 1500w,
+                                    assets/locals/home/locals-slide-01-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="localsonly.html">
-                        <img class="home" src="assets/locals/home/locals-slide-02.png">
+                        <!-- <img class="home" src="assets/locals/home/locals-slide-02.png"> -->
+                        <img class="home" src="assets/locals/home/locals-slide-02-lrg.jpg"
+                            srcset="assets/locals/home/locals-slide-02-sml.jpg 750w,
+                                    assets/locals/home/locals-slide-02-med.jpg 1000w,
+                                    assets/locals/home/locals-slide-02-lrg.jpg 1500w,
+                                    assets/locals/home/locals-slide-02-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="localsonly.html">
-                        <img class="home" src="assets/locals/home/locals-slide-03.png">
+                        <!-- <img class="home" src="assets/locals/home/locals-slide-03.png"> -->
+                        <img class="home" src="assets/locals/home/locals-slide-03-lrg.jpg"
+                            srcset="assets/locals/home/locals-slide-03-sml.jpg 750w,
+                                    assets/locals/home/locals-slide-03-med.jpg 1000w,
+                                    assets/locals/home/locals-slide-03-lrg.jpg 1500w,
+                                    assets/locals/home/locals-slide-03-lrgr.jpg 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
             </div>
@@ -155,17 +238,35 @@
             <div class="gallery">
                 <div class="gallery-cell">
                     <a class="gallery-link" href="sozo.html">
-                        <img class="home" src="assets/sozo/home/sozo-slide-01.png">
+                        <!-- <img class="home" src="assets/sozo/home/sozo-slide-01.png"> -->
+                        <img class="home" src="assets/sozo/home/sozo-slide-01-lrg.png"
+                            srcset="assets/sozo/home/sozo-slide-01-sml.png 750w,
+                                    assets/sozo/home/sozo-slide-01-med.png 1000w,
+                                    assets/sozo/home/sozo-slide-01-lrg.png 1500w,
+                                    assets/sozo/home/sozo-slide-01-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="sozo.html">
-                        <img class="home" src="assets/sozo/home/sozo-slide-02.png">
+                        <!-- <img class="home" src="assets/sozo/home/sozo-slide-02.png"> -->
+                        <img class="home" src="assets/sozo/home/sozo-slide-02-lrg.png"
+                            srcset="assets/sozo/home/sozo-slide-02-sml.png 750w,
+                                    assets/sozo/home/sozo-slide-02-med.png 1000w,
+                                    assets/sozo/home/sozo-slide-02-lrg.png 1500w,
+                                    assets/sozo/home/sozo-slide-02-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
                 <div class="gallery-cell">
                     <a class="gallery-link" href="sozo.html">
-                        <img class="home" src="assets/sozo/home/sozo-slide-03a.png">
+                        <!-- <img class="home" src="assets/sozo/home/sozo-slide-03a.png"> -->
+                        <img class="home" src="assets/sozo/home/sozo-slide-03-lrg.png"
+                            srcset="assets/sozo/home/sozo-slide-03-sml.png 750w,
+                                    assets/sozo/home/sozo-slide-03-med.png 1000w,
+                                    assets/sozo/home/sozo-slide-03-lrg.png 1500w,
+                                    assets/sozo/home/sozo-slide-03-lrgr.png 2000w"
+                            sizes="(min-width: 2000px) 100rem, (min-width: 601px) 50vw, (min-width: 376px) calc(100vw - 8rem), calc(100vw - 4rem)">
                     </a>
                 </div>
             </div>
@@ -202,18 +303,6 @@
             </li>
         </ul>
     </div>
-    <!--- jQuery -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--- jQuery Debounce -->
-    <script src="scripts/jquery-debounce.js"></script>
-    <!--- fullPage -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.easings.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/vendors/jquery.slimscroll.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.8/jquery.fullPage.min.js"></script>
-    <!--- Flickity -->
-    <script src="https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
-    <!-- jQuery Typer -->
-    <script src="scripts/jquery.OrderlyTyper.js"></script>
     <!-- Google Analytics -->
     <script>
     (function(i, s, o, g, r, a, m) {
@@ -231,8 +320,6 @@
     ga('create', 'UA-61305502-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <!-- Default -->
-    <script src="scripts/home.js"></script>
 </body>
 
 </html>

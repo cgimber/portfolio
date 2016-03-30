@@ -108,12 +108,12 @@ div#preloader {
 
 nav {
   width: 100%;
+  height: 8rem;
   position: fixed;
   top: 0;
   padding: 0 8rem;
   background-color: rgba(255, 255, 255, 0.95);
-  height: 8rem;
-  z-index: 1; }
+  z-index: 10; }
 
 nav ul {
   margin: 0;
@@ -136,13 +136,21 @@ nav li {
   transition: all 0.25s ease-in-out;
   display: inline-block; }
 
-nav a.active {
-  border-bottom: 0.125em solid black; }
-nav a:link, nav a:visited {
-  color: black;
-  font-weight: bold;
-  text-decoration: none; }
-nav a:hover, nav a:active {
+nav a {
+  display: inline-block;
+  height: 100%; }
+  nav a.active {
+    border-bottom: 0.125em solid black; }
+  nav a:link, nav a:visited {
+    color: black;
+    font-weight: bold;
+    text-decoration: none; }
+  nav a:hover, nav a:active {
+    border-bottom: 0.125em solid black; }
+
+html.touchSupport nav a:hover, html.touchSupport nav a:active {
+  border-bottom: none; }
+html.touchSupport nav a.active {
   border-bottom: 0.125em solid black; }
 
 nav #logo {
@@ -188,9 +196,17 @@ html.isMobile .section {
   html.isMobile .section.section--about {
     height: calc(((100vh - 5rem) / 2) + 5rem);
     padding-top: 11vh;
-    background: #1a1a1a; }
+    background: #1a1a1a;
+    z-index: 2; }
   html.isMobile .section.section--bruinbash {
-    background: #3F3F3F; }
+    background: #3F3F3F;
+    padding-top: calc(9vh);
+    padding-top: 8rem;
+    margin-top: -8rem; }
+    @media all and (max-width: 600px) {
+      html.isMobile .section.section--bruinbash {
+        padding-top: 5rem;
+        margin-top: -5rem; } }
   html.isMobile .section.section--juggle {
     background: #14A697; }
   html.isMobile .section.section--ageago {
@@ -256,7 +272,7 @@ a.underline-resume:hover, a.underline-resume:active {
 
 img.home {
   width: 50vw;
-  max-width: 99rem;
+  max-width: 100rem;
   margin-bottom: 2rem;
   box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
   /*    cursor: alias;*/
@@ -645,6 +661,8 @@ video {
   transition: right 0.5s ease-in-out; }
 
 #project-arrows a {
+  display: inline-block;
+  height: 100%;
   opacity: .5; }
 
 #project-arrows a:hover {
@@ -655,7 +673,7 @@ video {
   height: 16rem; }
 
 #footer {
-  z-index: 1;
+  z-index: 10;
   position: relative;
   left: 0px;
   bottom: 0px;
@@ -688,6 +706,9 @@ video {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center; }
+  #footer a {
+    display: inline-block;
+    height: 100%; }
   #footer .footer-text a:link, #footer .footer-text a:visited {
     text-decoration: none;
     color: black; }
@@ -820,6 +841,9 @@ svg.icon-social {
 
   #footer {
     padding: 0 4rem; }
+
+  .device-container {
+    display: none; }
 
   .iphone6--half {
     display: none; }

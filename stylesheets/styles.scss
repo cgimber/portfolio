@@ -114,14 +114,17 @@ div#preloader {
     z-index: 999;
 }
 
+// .pace .pace-progress {
+//   height: 8rem !important;
+// }
 nav {
     width: 100%;
+    height: 8rem;
     position: fixed;
     top: 0;
     padding: 0 8rem;
     background-color: rgba(255, 255, 255, 0.95);
-    height: 8rem;
-    z-index: 1;
+    z-index: 10;
 }
 
 nav ul {
@@ -142,6 +145,8 @@ nav li {
 }
 
 nav a {
+    display: inline-block;
+    height: 100%;
     &.active {
         border-bottom: 0.125em solid black;
     }
@@ -157,13 +162,16 @@ nav a {
     }
 }
 
-// html.touchSupport nav a {
-//     &:hover,
-//     &:active {
-//         position: relative;
-//         top: 1px;
-//     }
-// }
+html.touchSupport nav a {
+    &:hover,
+    &:active {
+        border-bottom: none;
+    }
+    &.active {
+        border-bottom: 0.125em solid black;
+    }
+}
+
 nav #logo {
     position: absolute;
     margin: 0;
@@ -220,9 +228,18 @@ html.isMobile .section {
         height: calc(((100vh - 5rem) / 2) + 5rem);
         padding-top: 11vh;
         background: $about;
+        z-index: 2; // cover top of next section
     }
     &.section--bruinbash {
         background: $bruinbash;
+        padding-top: calc(9vh);
+        // add nav height so we can scroll to correctly when linking to /#bruinbash
+        padding-top: 8rem;
+        margin-top: -8rem;
+        @media all and (max-width: 600px) {
+            padding-top: 5rem;
+            margin-top: -5rem;
+        }
     }
     &.section--juggle {
         background: $juggle;
@@ -242,7 +259,6 @@ html.isMobile .section .gallery {
     padding-top: 9vh;
     padding-bottom: 5vh;
 }
-
 
 /* page dots won't show on desktop */
 
@@ -321,7 +337,7 @@ a.underline-resume {
 
 img.home {
     width: 50vw;
-    max-width: 99rem;
+    max-width: 100rem;
     margin-bottom: 2rem;
     box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
     /*    cursor: alias;*/
@@ -687,6 +703,8 @@ video {
 }
 
 #project-arrows a {
+    display: inline-block;
+    height: 100%;
     opacity: .5;
 }
 
@@ -700,7 +718,7 @@ video {
 }
 
 #footer {
-    z-index: 1;
+    z-index: 10;
     position: relative;
     left: 0px;
     bottom: 0px;
@@ -711,6 +729,10 @@ video {
     @include display(flex);
     @include justify-content(space-between);
     @include align-items(center);
+    a {
+        display: inline-block;
+        height: 100%;
+    }
     .footer-text a {
         &:link,
         &:visited {
@@ -883,6 +905,9 @@ svg.icon-social {
     }
     #footer {
         padding: 0 4rem;
+    }
+    .device-container {
+        display: none;
     }
     .iphone6--half {
         display: none;
