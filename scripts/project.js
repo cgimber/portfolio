@@ -10,7 +10,7 @@ var touchSupport = false;
 if ('ontouchstart' in window || navigator.maxTouchPoints)
     touchSupport = true;
 
-/* preloader
+/* window load
 -------------------------------------------------------------------------------------*/
 $(window).load(function() {
     $('#preloader').fadeOut('slow', function() {

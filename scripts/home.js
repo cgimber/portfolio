@@ -10,7 +10,7 @@ var touchSupport = false;
 if ('ontouchstart' in window || navigator.maxTouchPoints)
     touchSupport = true;
 
-/* preloader
+/* window load
 -------------------------------------------------------------------------------------*/
 $(window).load(function() {
     $('#preloader').fadeOut('slow', function() {
@@ -94,9 +94,16 @@ $(document).ready(function() {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
-                        $('html, body').animate({
-                            scrollTop: target.offset().top
-                        }, 750);
+                        var isProject = $(target).is('#bruinbash');
+                        if (isProject) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top + 1
+                            }, 750);
+                        } else {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 750);
+                        }
                         return false;
                     }
                 }
@@ -210,16 +217,6 @@ $(document).ready(function() {
 
         /* update hrefs for each slide
         ----------------------------------------------------------*/
-        function updateSlideLinks() {
-            slideLinks.each(function() {
-                var slide = this.offsetParent;
-                if ($(slide).hasClass('is-selected'))
-                    $(this).prop('href', '/' + section + '.html');
-                else
-                    $(this).prop('href', 'javascript:;');
-            });
-        }
-
         $(gallery).on('cellSelect', function() {
             window.setTimeout(updateSlideLinks, 1);
         });
@@ -246,6 +243,18 @@ $(document).ready(function() {
 
     }
     $('[data-typer-targets]').OrderlyTyper();
+
+    /* functions
+    --------------------------------------------------------------*/
+    function updateSlideLinks() {
+        slideLinks.each(function() {
+            var slide = this.offsetParent;
+            if ($(slide).hasClass('is-selected'))
+                $(this).prop('href', '/' + section + '.html');
+            else
+                $(this).prop('href', 'javascript:;');
+        });
+    }
 });
 
 
