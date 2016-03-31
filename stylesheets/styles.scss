@@ -107,7 +107,7 @@ p {
     margin-after: 0;
 }
 
-div#preloader {
+#preloader {
     height: 100%;
     position: fixed;
     width: 100%;
@@ -145,8 +145,8 @@ nav li {
 }
 
 nav a {
-    display: inline-block;
-    height: 100%;
+    // display: inline-block;
+    // height: 100%;
     &.active {
         border-bottom: 0.125em solid black;
     }
@@ -357,15 +357,15 @@ html.touchSupport img.home {
 }
 
 .is-previous img.home:hover {
-    cursor: url(/assets/cursor-previous-01.png) 20 20, cell;
+    cursor: url(../assets/cursor-previous-01.png) 20 20, cell;
 }
 
 .is-selected img.home:hover {
-    cursor: url(/assets/cursor-plus-03.png) 20 20, cell;
+    cursor: url(../assets/cursor-plus-03.png) 20 20, cell;
 }
 
 .is-next img.home:hover {
-    cursor: url(/assets/cursor-next-01.png) 20 20, cell;
+    cursor: url(../assets/cursor-next-01.png) 20 20, cell;
 }
 
 .modal {
@@ -729,10 +729,10 @@ video {
     @include display(flex);
     @include justify-content(space-between);
     @include align-items(center);
-    a {
-        display: inline-block;
-        height: 100%;
-    }
+    // a {
+    //     display: inline-block;
+    //     height: 100%;
+    // }
     .footer-text a {
         &:link,
         &:visited {

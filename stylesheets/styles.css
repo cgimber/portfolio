@@ -100,7 +100,7 @@ p {
   margin-before: 0;
   margin-after: 0; }
 
-div#preloader {
+#preloader {
   height: 100%;
   position: fixed;
   width: 100%;
@@ -136,17 +136,14 @@ nav li {
   transition: all 0.25s ease-in-out;
   display: inline-block; }
 
-nav a {
-  display: inline-block;
-  height: 100%; }
-  nav a.active {
-    border-bottom: 0.125em solid black; }
-  nav a:link, nav a:visited {
-    color: black;
-    font-weight: bold;
-    text-decoration: none; }
-  nav a:hover, nav a:active {
-    border-bottom: 0.125em solid black; }
+nav a.active {
+  border-bottom: 0.125em solid black; }
+nav a:link, nav a:visited {
+  color: black;
+  font-weight: bold;
+  text-decoration: none; }
+nav a:hover, nav a:active {
+  border-bottom: 0.125em solid black; }
 
 html.touchSupport nav a:hover, html.touchSupport nav a:active {
   border-bottom: none; }
@@ -292,13 +289,13 @@ html.touchSupport img.home:hover {
   box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25); }
 
 .is-previous img.home:hover {
-  cursor: url(/assets/cursor-previous-01.png) 20 20, cell; }
+  cursor: url(../assets/cursor-previous-01.png) 20 20, cell; }
 
 .is-selected img.home:hover {
-  cursor: url(/assets/cursor-plus-03.png) 20 20, cell; }
+  cursor: url(../assets/cursor-plus-03.png) 20 20, cell; }
 
 .is-next img.home:hover {
-  cursor: url(/assets/cursor-next-01.png) 20 20, cell; }
+  cursor: url(../assets/cursor-next-01.png) 20 20, cell; }
 
 .modal {
   /*    display: none;*/
@@ -706,9 +703,6 @@ video {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center; }
-  #footer a {
-    display: inline-block;
-    height: 100%; }
   #footer .footer-text a:link, #footer .footer-text a:visited {
     text-decoration: none;
     color: black; }

@@ -24,8 +24,8 @@ $(document).ready(function() {
     if (isMobile)
         $('html, body').addClass('isMobile');
     if (touchSupport)
-            $('html').addClass('touchSupport');
-    
+        $('html').addClass('touchSupport');
+
     $('.project-carousel').slick({
         infinite: true,
         speed: 1000,
@@ -48,14 +48,21 @@ $(document).ready(function() {
     $("body").keydown(function(e) {
         switch (e.keyCode) {
             case 39: // right
-                $('.next').click();
-                console.log("next");
+                $link = $('.next');
                 break;
 
             case 37: // left
-                $('.previous').click();
-                console.log("previous");
+                $link = $('.previous');
                 break;
         }
+        var path = $link.attr('href');
+        var currPath = window.location.pathname.split('/');
+        var newPath = window.location.protocol + "//" + window.location.host;
+        for (i = 0; i < currPath.length - 1; i++) {
+            newPath += currPath[i];
+            newPath += "/";
+        }
+        newPath += path;
+        window.location.href = newPath;
     });
 });

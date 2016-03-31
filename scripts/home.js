@@ -37,6 +37,7 @@ $(document).ready(function() {
         gallery = $('.gallery').flickity({
             // options
             cellAlign: 'center',
+            imagesLoaded: true,
             percentPosition: true,
             prevNextButtons: false,
             pageDots: true,
@@ -178,9 +179,11 @@ $(document).ready(function() {
                     if (!section) // 2) the page was loaded without a page anchor 
                         section = 'about';
                 }
+
                 gallery = $('.gallery').flickity({
                     // options
                     cellAlign: 'center',
+                    imagesLoaded: true,
                     percentPosition: true,
                     prevNextButtons: false,
                     pageDots: false,
@@ -250,7 +253,7 @@ $(document).ready(function() {
         slideLinks.each(function() {
             var slide = this.offsetParent;
             if ($(slide).hasClass('is-selected'))
-                $(this).prop('href', '/' + section + '.html');
+                $(this).prop('href', section + '.html');
             else
                 $(this).prop('href', 'javascript:;');
         });
