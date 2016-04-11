@@ -29,7 +29,7 @@ $(document).ready(function() {
         $('html').addClass('isMobile');
         // add page anchors for nav scrolling
         $('.section--about').attr('id', 'about');
-        $('.section--bruinbash').attr('id', 'bruinbash');
+        $('.section--lahacks').attr('id', 'lahacks');
 
         if (touchSupport)
             $('html').addClass('touchSupport');
@@ -62,7 +62,7 @@ $(document).ready(function() {
         // update nav links during page scroll
         $(window).scroll(debounce(function() {
             var scrollTop = $(window).scrollTop();
-            var $workSection = $('.section--bruinbash');
+            var $workSection = $('.section--lahacks');
             var workPos = $workSection.offset();
             var currSection;
 
@@ -88,14 +88,14 @@ $(document).ready(function() {
             }
         }, 100));
 
-        // smooth scroll for anchors on the same page (#about and #bruinbash)
+        // smooth scroll for anchors on the same page (#about and #lahacks)
         $(function() {
             $('a[href*="#"]:not([href="#"])').click(function() {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     if (target.length) {
-                        var isProject = $(target).is('#bruinbash');
+                        var isProject = $(target).is('#lahacks');
                         if (isProject) {
                             $('html, body').animate({
                                 scrollTop: target.offset().top + 1
@@ -117,7 +117,7 @@ $(document).ready(function() {
         $('#fullpage').fullpage({
             // navigation
             menu: false,
-            anchors: ['about', 'bruinbash', 'juggle', 'ageago', 'localsonly', 'sozo'],
+            anchors: ['about', 'lahacks', 'bruinbash', 'juggle', 'ageago', 'localsonly', 'sozo'],
             //        navigation: false,
             //        navigationPosition: 'right',
             //        navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -148,7 +148,7 @@ $(document).ready(function() {
             controlArrows: true,
             verticalCentered: true,
             resize: true,
-            sectionsColor: ['#1a1a1a', '#3F3F3F', '#14A697', '#f2bb13', '#F29D35', '#f25151'],
+            sectionsColor: ['#1a1a1a', '#3F3F3F', '#1584B7', '#14A697', '#f2bb13', '#F29D35', '#f25151'],
             paddingTop: '80px',
             //        paddingBottom: '0px',
             //        fixedElements: '#header, .footer',

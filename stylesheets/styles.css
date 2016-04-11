@@ -195,15 +195,17 @@ html.isMobile .section {
     padding-top: 11vh;
     background: #1a1a1a;
     z-index: 2; }
-  html.isMobile .section.section--bruinbash {
+  html.isMobile .section.section--lahacks {
     background: #3F3F3F;
     padding-top: calc(9vh);
     padding-top: 8rem;
     margin-top: -8rem; }
     @media all and (max-width: 600px) {
-      html.isMobile .section.section--bruinbash {
+      html.isMobile .section.section--lahacks {
         padding-top: 5rem;
         margin-top: -5rem; } }
+  html.isMobile .section.section--bruinbash {
+    background: #1584B7; }
   html.isMobile .section.section--juggle {
     background: #14A697; }
   html.isMobile .section.section--ageago {
@@ -454,6 +456,35 @@ html.touchSupport img.home:hover {
 
 /* PROJECT PAGE
 =====================================================================*/
+.page-wrap {
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  max-width: 75rem;
+  min-height: 100%;
+  /* margin-top and bottom equal to footer height */
+  margin: 12rem auto -12rem auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  .page-wrap strong {
+    letter-spacing: 0.1em; }
+
+.page-wrap:after {
+  content: "";
+  display: block; }
+
+.page-wrap a:link,
+.page-wrap a:visited {
+  text-decoration: none;
+  color: white;
+  border-bottom: 0.125em solid white; }
+
+.page-wrap a:hover,
+.page-wrap a:active {
+  background-color: white;
+  color: black;
+  border-bottom: 0.125em solid black; }
+
 .flex-container {
   display: flex !important;
   -webkit-flex-flow: row wrap;
@@ -485,14 +516,11 @@ html.touchSupport img.home:hover {
   text-align: right;
   font-weight: bold;
   line-height: 2rem;
-  letter-spacing: 0.05em;
   align-self: center; }
 
 .project-body {
-  max-width: 50rem;
-  padding-top: 4rem;
-  line-height: 1.5em;
-  letter-spacing: 0.05em; }
+  max-width: 51.75rem;
+  padding-top: 4rem; }
   .project-body p {
     margin-top: 1em; }
     .project-body p:first-of-type {
@@ -508,6 +536,9 @@ img.process {
     padding: 0; }
   .project-carousel.slick-slider .img.process {
     padding-top: 0; }
+
+.project-group {
+  display: inline-block; }
 
 .project-video {
   margin-top: 4rem; }
@@ -531,38 +562,15 @@ img.process {
   height: 100%; }
 
 .project-credits {
-  padding-top: 4rem;
-  line-height: 1.5em;
-  letter-spacing: 0.05em; }
+  padding-top: 4rem; }
   .project-credits p {
     margin-top: 1em; }
     .project-credits p:first-of-type {
       margin-top: 0; }
 
-.page-wrap {
-  max-width: 75rem;
-  min-height: 100%;
-  /* margin-top and bottom equal to footer height */
-  margin: 12rem auto -12rem auto;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
-
-.page-wrap:after {
-  content: "";
-  display: block; }
-
-.page-wrap a:link,
-.page-wrap a:visited {
-  text-decoration: none;
-  color: white;
-  border-bottom: 0.125em solid white; }
-
-.page-wrap a:hover,
-.page-wrap a:active {
-  background-color: white;
-  color: black;
-  border-bottom: 0.125em solid black; }
+.video-container {
+  display: inline-block;
+  margin-top: 4rem; }
 
 .device-container {
   display: -webkit-box;
