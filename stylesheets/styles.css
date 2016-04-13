@@ -50,7 +50,7 @@ html.isMobile {
 body {
   margin: 0;
   font-family: 'audimat';
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: normal; }
 
 ::-moz-selection {
@@ -510,16 +510,20 @@ html.touchSupport img.home:hover {
   -ms-flex-align: center; }
 
 #project-title {
-  /*    border-bottom: 0.125em solid #3f5ca9;*/ }
+  /*    border-bottom: 0.125em solid #3f5ca9;*/
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
 
 #project-tags {
   text-align: right;
+  font-size: 1.6rem;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   line-height: 2rem;
   align-self: center; }
 
 .project-body {
-  max-width: 51.75rem;
   padding-top: 4rem; }
   .project-body p {
     margin-top: 1em; }

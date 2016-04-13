@@ -187,7 +187,7 @@ $(document).ready(function() {
                     percentPosition: true,
                     prevNextButtons: false,
                     pageDots: false,
-                    draggable: false,
+                    draggable: true,
                     wrapAround: true
                 });
 
