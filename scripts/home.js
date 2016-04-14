@@ -10,20 +10,16 @@ var touchSupport = false;
 if ('ontouchstart' in window || navigator.maxTouchPoints)
     touchSupport = true;
 
-/* window load
--------------------------------------------------------------------------------------*/
-$(window).load(function() {
-    $('#preloader').fadeOut('slow', function() {
-        $(this).remove();
-    });
-});
-
 /* document ready
 -------------------------------------------------------------------------------------*/
 $(document).ready(function() {
     var section;
     var gallery;
     var slideLinks = $('a.gallery-link');
+
+    $('#preloader').fadeOut(500, 'easeInCirc', function() {
+        $('body').removeClass('isLoading');
+    });
 
     if (isMobile) {
         $('html').addClass('isMobile');

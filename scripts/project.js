@@ -12,11 +12,31 @@ if ('ontouchstart' in window || navigator.maxTouchPoints)
 
 /* window load
 -------------------------------------------------------------------------------------*/
-$(window).load(function() {
-    $('#preloader').fadeOut('slow', function() {
-        $(this).remove();
+var loadedCount = 0; // current number of images loaded
+var imagesToLoad = $('img').length; // number of images
+var loadingProgress = 0; // timeline progress
+$('.progress-bar').height($('nav').height()); // set progress bar height
+
+$('img').imagesLoaded()
+    .progress(function(instance, image) {
+        loadProgress();
+    })
+    .always(function(instance) {
+        setTimeout(function() {
+            $('#preloader').fadeOut(250, 'easeInCirc', function() {
+                $('body').removeClass('isLoading');
+            });
+        }, 250);
     });
-});
+
+function loadProgress(imgLoad, image) {
+    loadedCount++;
+    loadingProgress = (loadedCount / imagesToLoad);
+    var currWidth = loadingProgress * ($(window).width());
+
+    // update our progress bar timeline
+    $('.progress-bar').width(currWidth);
+}
 
 /* document ready
 -------------------------------------------------------------------------------------*/
@@ -49,20 +69,25 @@ $(document).ready(function() {
         switch (e.keyCode) {
             case 39: // right
                 $link = $('.next');
+                launchProject($link);
                 break;
 
             case 37: // left
                 $link = $('.previous');
+                launchProject($link);
                 break;
         }
-        var path = $link.attr('href');
-        var currPath = window.location.pathname.split('/');
-        var newPath = window.location.protocol + "//" + window.location.host;
-        for (i = 0; i < currPath.length - 1; i++) {
-            newPath += currPath[i];
-            newPath += "/";
+
+        function launchProject($link) {
+            var path = $link.attr('href');
+            var currPath = window.location.pathname.split('/');
+            var newPath = window.location.protocol + "//" + window.location.host;
+            for (i = 0; i < currPath.length - 1; i++) {
+                newPath += currPath[i];
+                newPath += "/";
+            }
+            newPath += path;
+            window.location.href = newPath;
         }
-        newPath += path;
-        window.location.href = newPath;
     });
 });

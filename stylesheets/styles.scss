@@ -33,6 +33,40 @@ $sozo: #f25151;
     clear: both;
 }
 
+#home #preloader {
+    background: white;
+}
+
+#lahacks,
+#lahacks #preloader {
+    background: $lahacks;
+}
+
+#bruinbash,
+#bruinbash #preloader {
+    background: $bruinbash;
+}
+
+#juggle,
+#juggle #preloader {
+    background: $juggle;
+}
+
+#ageago,
+#ageago #preloader {
+    background: $ageago;
+}
+
+#localsonly,
+#localsonly #preloader {
+    background: $localsonly;
+}
+
+#sozo,
+#sozo #preloader {
+    background: $sozo;
+}
+
 html,
 body {
     height: 100%;
@@ -55,6 +89,10 @@ body {
     font-family: 'audimat';
     font-size: 2.2rem;
     font-weight: normal;
+}
+
+body.isLoading {
+    overflow: hidden;
 }
 
 ::-moz-selection {
@@ -110,14 +148,21 @@ p {
 
 #preloader {
     height: 100%;
-    position: fixed;
+    position: relative;
     width: 100%;
-    z-index: 999;
+    z-index: 998;
+    overflow: hidden;
+    .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100vw;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 999;
+        @include transition(width .25s ease-in);
+    }
 }
 
-// .pace .pace-progress {
-//   height: 8rem !important;
-// }
 nav {
     width: 100%;
     height: 8rem;
