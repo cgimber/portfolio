@@ -15,13 +15,17 @@ if ('ontouchstart' in window || navigator.maxTouchPoints)
 var loadedCount = 0; // current number of images loaded
 var imagesToLoad = $('img').length; // number of images
 var loadingProgress = 0; // timeline progress
+var doneLoading = false;
 $('.progress-bar').height($('nav').height()); // set progress bar height
 
 $('img').imagesLoaded()
     .progress(function(instance, image) {
-        loadProgress();
+        if (!doneLoading)
+            loadProgress();
     })
     .always(function(instance) {
+        clearTimeout(safetyNet);
+        // remove preloader
         setTimeout(function() {
             $('#preloader').fadeOut(250, 'easeInCirc', function() {
                 $('body').removeClass('isLoading');
@@ -37,6 +41,19 @@ function loadProgress(imgLoad, image) {
     // update our progress bar timeline
     $('.progress-bar').width(currWidth);
 }
+
+// if load lasts longer than 2 secs, remove preloader ahead of time
+var safetyNet = setTimeout(function() {
+    doneLoading = true;
+    // jump to 100%
+    $('.progress-bar').width($(window).width());
+    // remove preloader
+    setTimeout(function() {
+        $('#preloader').fadeOut(250, 'easeInCirc', function() {
+            $('body').removeClass('isLoading');
+        });
+    }, 250);
+}, 2000);
 
 /* document ready
 -------------------------------------------------------------------------------------*/
