@@ -18,6 +18,7 @@ $juggle: #14A697;
 $ageago: #f2bb13;
 $localsonly: #F29D35;
 $sozo: #f25151;
+$foodtrucksofla: #F29D35;
 
 /*-------------------------------------------------------------------*/
 
@@ -65,6 +66,11 @@ $sozo: #f25151;
 #sozo,
 #sozo #preloader {
     background: $sozo;
+}
+
+#foodtrucksofla,
+#foodtrucksofla #preloader {
+    background: $foodtrucksofla;
 }
 
 html,
@@ -344,6 +350,10 @@ html.isMobile .section .gallery {
 
 .greetings__line-break {
     display: none;
+}
+
+.greetings__expertise {
+    font-style: italic;
 }
 
 .underline-green {

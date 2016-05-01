@@ -60,6 +60,10 @@
 #sozo #preloader {
   background: #f25151; }
 
+#foodtrucksofla,
+#foodtrucksofla #preloader {
+  background: #F29D35; }
+
 html,
 body {
   height: 100%;
@@ -288,6 +292,9 @@ html.isMobile .section .gallery {
 
 .greetings__line-break {
   display: none; }
+
+.greetings__expertise {
+  font-style: italic; }
 
 .underline-green {
   border-bottom: 0.125em solid #52F2F2; }
