@@ -113,7 +113,7 @@ $(document).ready(function() {
         $('#fullpage').fullpage({
             // navigation
             menu: false,
-            anchors: ['about', 'lahacks', 'bruinbash', 'juggle', 'ageago', 'localsonly', 'sozo'],
+            anchors: ['about', 'lahacks', 'juggle', 'bruinbash', 'ageago', 'localsonly', 'sozo'],
             //        navigation: false,
             //        navigationPosition: 'right',
             //        navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -144,7 +144,7 @@ $(document).ready(function() {
             controlArrows: true,
             verticalCentered: true,
             resize: true,
-            sectionsColor: ['#1a1a1a', '#3F3F3F', '#1584B7', '#14A697', '#f2bb13', '#F29D35', '#f25151'],
+            sectionsColor: ['#1a1a1a', '#3F3F3F', '#14A697', '#1584B7', '#f2bb13', '#F29D35', '#f25151'],
             paddingTop: '80px',
             //        paddingBottom: '0px',
             //        fixedElements: '#header, .footer',
