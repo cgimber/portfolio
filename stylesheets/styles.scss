@@ -391,8 +391,29 @@ a.underline-resume {
     text-align: left;
 }
 
+#tooltip {
+    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    font-size: 3rem;
+    letter-spacing: 0.025em;
+    text-align: center;
+    color: white;
+    z-index: 999;
+}
+
 .gallery-cell {
     padding: 0 4.16%;
+}
+
+.gallery-link:hover:before {
+    content: attr(title);
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    margin: -35px 0 0 0;
 }
 
 img.home {
@@ -428,17 +449,18 @@ html.touchSupport img.home {
     cursor: url(../assets/cursor-next-01.png) 20 20, cell;
 }
 
-.modal {
+.directions-container {
     /*    display: none;*/
     position: absolute;
-    top: 0;
+    bottom: 8rem;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .85);
+    @include transform(scale(0.33));
+    // height: 100%;
+    // background-color: rgba(0, 0, 0, .85);
     padding: 0 1em;
 }
 
-.modal #nav-directions {
+.directions-container #nav-directions {
     color: white;
     position: absolute;
     top: 51%;
@@ -505,32 +527,46 @@ html.touchSupport img.home {
     }
 }
 
+@include keyframes(shortKeyPress) {
+    37.5%,
+    62.5% {
+        color: #bbb;
+        background: #fafafa;
+    }
+    50% {
+        color: #888;
+        background: #ebeced;
+        @include transform(translateX(1px) translateY(1px));
+    }
+}
+
 .left {
     position: absolute;
     left: 1.5rem;
     top: 7rem;
-    @include animation(keyPress .6s 0s infinite alternate);
+    // @include animation(keyPress .6s 0s infinite alternate);
 }
 
 .right {
     position: absolute;
     right: 1.5rem;
     top: 7rem;
-    @include animation(keyPress .6s 0.15s infinite alternate);
+    // @include animation(keyPress .6s 0.15s infinite alternate);
 }
 
 .top {
     position: absolute;
     left: 11.3rem;
     top: 0rem;
-    @include animation(keyPress .6s 0.3s infinite alternate);
+    // @include animation(keyPress .6s 0.3s infinite alternate);
 }
 
 .down {
     position: absolute;
     left: 11.3rem;
     top: 7rem;
-    @include animation(keyPress .6s 0.45s infinite alternate);
+    @include animation(shortKeyPress 2s infinite);
+    // @include animation-delay(1s);
 }
 
 
@@ -899,21 +935,23 @@ svg.icon-social {
 =====================================================================*/
 
 
-/* hide modal on mobile
+/* hide directions-container on mobile
 ---------------------------------------------------------------------*/
 
-@media only screen and (min-device-width: 320px) and (orientation: portrait),
-(max-device-width: 1024px) and (orientation: landscape) {
-    .modal {
-        display: none;
-    }
-}
-
-@media only screen and (min-device-width: 320px) and (orientation: portrait),
-(max-device-width: 768px) and (orientation: portrait) {
-    .modal {
-        display: none;
-    }
+// @media only screen and (min-device-width: 320px) and (orientation: portrait),
+// (max-device-width: 1024px) and (orientation: landscape) {
+//     .directions-container {
+//         display: none;
+//     }
+// }
+// @media only screen and (min-device-width: 320px) and (orientation: portrait),
+// (max-device-width: 768px) and (orientation: portrait) {
+//     .directions-container {
+//         display: none;
+//     }
+// }
+html.isMobile .directions-container {
+    display: none;
 }
 
 
