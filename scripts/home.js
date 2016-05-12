@@ -277,13 +277,13 @@ $(document).ready(function() {
             var slide = this.offsetParent;
             if ($(slide).hasClass('is-selected')) {
                 $(this).prop('href', section + '.html');
-                $(this).attr('data-title', 'see more');
+                $(this).attr('data-title', 'Go to project');
             } else if ($(slide).hasClass('is-next')) {
                 $(this).prop('href', 'javascript:;');
-                $(this).attr('data-title', 'next slide');
+                $(this).attr('data-title', 'Next slide');
             } else if ($(slide).hasClass('is-previous')) {
                 $(this).prop('href', 'javascript:;');
-                $(this).attr('data-title', 'previous slide');
+                $(this).attr('data-title', 'Previous slide');
             }
         });
     }

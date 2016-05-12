@@ -396,10 +396,12 @@ a.underline-resume {
     position: absolute;
     width: 100%;
     bottom: 2rem;
-    font-size: 3rem;
-    letter-spacing: 0.025em;
+    font-size: 2.2rem;
+    letter-spacing: 0.1em;
     text-align: center;
+    text-transform: uppercase;
     color: white;
+    opacity: 0.75;
     z-index: 999;
 }
 
@@ -454,7 +456,7 @@ html.touchSupport img.home {
     position: absolute;
     bottom: 8rem;
     width: 100%;
-    @include transform(scale(0.33));
+    @include transform(scale(0.5));
     // height: 100%;
     // background-color: rgba(0, 0, 0, .85);
     padding: 0 1em;
@@ -490,30 +492,16 @@ html.touchSupport img.home {
 .key {
     font-size: 4rem;
     display: inline-block;
-    color: #bbb;
+    color: white;
     text-align: center;
     padding: .8rem 3.5rem;
-    background: #fafafa;
-    -moz-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
-    -webkit-box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
-    box-shadow: .25rem .25rem 0 rgba(0, 0, 0, 1);
-    /*          text-shadow: 0px 1px 1px #fff;*/
-    /*
-    -webkit-transition-property: none;
-    -moz-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
-    -o-transition: font-size .5s ease-in-out, line-height .5s ease-in-out;
-    transition-property: none;
-*/
+    background: $about;
+    border: 1px rgba(255, 255, 255, 0.75) solid;
+    -moz-box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
+    box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
+    // @include transition(color .5s ease-in-out, background .5s ease-in-out, border .5s ease-in-out);
 }
-
-
-/*
-.key:active {
-    color: #888;
-    background: #ebeced;
-    margin: 2px 3px 0 0;
-}
-*/
 
 @include keyframes(keyPress) {
     0% {
@@ -528,15 +516,22 @@ html.touchSupport img.home {
 }
 
 @include keyframes(shortKeyPress) {
-    37.5%,
-    62.5% {
-        color: #bbb;
-        background: #fafafa;
+    43.75%,
+    56.25% {
+        color: white;
+        background: $about;
+        @include transform(translateX(0) translateY(0));
+        -moz-box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
+        -webkit-box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
+        box-shadow: .5rem .5rem 0 rgba(255, 255, 255, 0.75);
     }
     50% {
-        color: #888;
-        background: #ebeced;
-        @include transform(translateX(1px) translateY(1px));
+        color: $about;
+        background: rgba(255, 255, 255, 0.75);
+        @include transform(translateX(.5rem) translateY(.5rem));
+        -moz-box-shadow: 0 0 0 rgba(255, 255, 255, 0.75);
+        -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.75);
     }
 }
 
@@ -544,29 +539,28 @@ html.touchSupport img.home {
     position: absolute;
     left: 1.5rem;
     top: 7rem;
-    // @include animation(keyPress .6s 0s infinite alternate);
+    // @include animation(shortKeyPress 4s 0s infinite);
 }
 
 .right {
     position: absolute;
     right: 1.5rem;
     top: 7rem;
-    // @include animation(keyPress .6s 0.15s infinite alternate);
+    // @include animation(shortKeyPress 4s 1s infinite);
 }
 
 .top {
     position: absolute;
     left: 11.3rem;
     top: 0rem;
-    // @include animation(keyPress .6s 0.3s infinite alternate);
+    // @include animation(shortKeyPress 4s 2s infinite);
 }
 
 .down {
     position: absolute;
     left: 11.3rem;
     top: 7rem;
-    @include animation(shortKeyPress 2s infinite);
-    // @include animation-delay(1s);
+    @include animation(shortKeyPress 8s 0s infinite);
 }
 
 
