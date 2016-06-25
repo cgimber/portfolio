@@ -630,22 +630,26 @@ html.touchSupport img.home:hover {
   align-self: center; }
 
 .project-body {
-  padding-top: 4rem; }
+  margin-top: 4rem; }
   .project-body p {
     margin-top: 1em; }
     .project-body p:first-of-type {
       margin-top: 0; }
 
-img.process {
+.process {
   width: 100%;
-  padding-top: 4rem; }
+  margin-top: 4rem; }
+
+.window-mockup {
+  border-radius: 3px 3px 0 0;
+  border-top: solid 3rem rgba(255, 255, 255, 0.5); }
 
 .project-carousel.slick-slider {
   margin-bottom: 0.5rem; }
   .project-carousel.slick-slider .slick-slide {
     padding: 0; }
   .project-carousel.slick-slider .img.process {
-    padding-top: 0; }
+    margin-top: 0; }
 
 .project-group {
   display: inline-block; }
@@ -672,7 +676,7 @@ img.process {
   height: 100%; }
 
 .project-credits {
-  padding-top: 4rem; }
+  margin-top: 4rem; }
   .project-credits p {
     margin-top: 1em; }
     .project-credits p:first-of-type {
@@ -1041,7 +1045,10 @@ html.isMobile .directions-container {
       padding-left: 2rem; }
 
   .iphone6--full {
-    margin: 1rem 0; } }
+    margin: 1rem 0; }
+
+  .window-mockup {
+    border-top: solid 1.5rem rgba(255, 255, 255, 0.5); } }
 @media all and (max-width: 375px) {
   .section-about {
     padding: 0 2rem; }
@@ -1074,7 +1081,7 @@ html.isMobile .directions-container {
 
   .project-body,
   .project-credits {
-    padding-top: 2rem; }
+    margin-top: 2rem; }
 
   #project-arrows a.previous img {
     left: -1rem; }
@@ -1083,7 +1090,7 @@ html.isMobile .directions-container {
     right: -1rem; }
 
   img.process {
-    padding-top: 2rem; }
+    margin-top: 2rem; }
 
   .device-container {
     margin-top: 2rem; }
