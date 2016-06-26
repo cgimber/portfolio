@@ -12,6 +12,7 @@
 ---------------------------------------------------------------------*/
 
 $about: #1a1a1a;
+$deckster: #2d2d2d;
 $lahacks: #3F3F3F;
 $bruinbash: #1584B7;
 $juggle: #14A697;
@@ -36,6 +37,11 @@ $foodtrucksofla: #F29D35;
 
 #home #preloader {
     background: white;
+}
+
+#deckster,
+#deckster #preloader {
+    background: $deckster;
 }
 
 #lahacks,
@@ -282,8 +288,8 @@ html.isMobile .section {
         background: $about;
         z-index: 2; // cover top of next section
     }
-    &.section--lahacks {
-        background: $lahacks;
+    &.section--deckster {
+        background: $deckster;
         padding-top: calc(9vh);
         // add nav height so we can scroll to correctly when linking to /#bruinbash
         padding-top: 8rem;
@@ -292,6 +298,9 @@ html.isMobile .section {
             padding-top: 5rem;
             margin-top: -5rem;
         }
+    }
+    &.section--lahacks {
+        background: $lahacks;
     }
     &.section--bruinbash {
         background: $bruinbash;
@@ -423,7 +432,6 @@ img.home {
     max-width: 100rem;
     margin-bottom: 2rem;
     box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.25);
-    /*    cursor: alias;*/
     @include transition(all .25s ease-in-out);
     &:hover {
         box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 2rem 2rem 0 white;
@@ -440,7 +448,7 @@ html.touchSupport img.home {
 }
 
 .is-previous img.home:hover {
-    cursor: url(../assets/cursor-previous-01.png) 20 20, cell;
+    cursor: url(../assets/cursor-previous-01.png) 20 20, w-resize;
 }
 
 .is-selected img.home:hover {
@@ -448,7 +456,7 @@ html.touchSupport img.home {
 }
 
 .is-next img.home:hover {
-    cursor: url(../assets/cursor-next-01.png) 20 20, cell;
+    cursor: url(../assets/cursor-next-01.png) 20 20, e-resize;
 }
 
 .directions-container {
@@ -675,7 +683,7 @@ html.touchSupport img.home {
 
 .window-mockup {
     border-radius: 3px 3px 0 0;
-    border-top: solid 3rem rgba(255, 255, 255, 0.5);
+    border-top: solid 3rem #c7c8ca;
 }
 
 .project-carousel.slick-slider {
@@ -714,6 +722,14 @@ html.touchSupport img.home {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.embed-container--disabled {
+    pointer-events: none;
+}
+
+html.isMobile .embed-container--disabled {
+    pointer-events: auto;
 }
 
 .project-credits {
@@ -1126,7 +1142,7 @@ html.isMobile .directions-container {
     }
     .window-mockup {
         // border-radius: 3px 3px 0 0;
-        border-top: solid 1.5rem rgba(255, 255, 255, 0.5);
+        border-top: solid 1.5rem #c7c8ca;
     }
 }
 

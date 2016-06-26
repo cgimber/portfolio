@@ -25,7 +25,7 @@ $(document).ready(function() {
         $('html').addClass('isMobile');
         // add page anchors for nav scrolling
         $('.section--about').attr('id', 'about');
-        $('.section--lahacks').attr('id', 'lahacks');
+        $('.section--deckster').attr('id', 'deckster');
 
         if (touchSupport)
             $('html').addClass('touchSupport');
@@ -58,7 +58,7 @@ $(document).ready(function() {
         // update nav links during page scroll
         $(window).scroll(debounce(function() {
             var scrollTop = $(window).scrollTop();
-            var $workSection = $('.section--lahacks');
+            var $workSection = $('.section--deckster');
             var workPos = $workSection.offset();
             var currSection;
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
         $('#fullpage').fullpage({
             // navigation
             menu: false,
-            anchors: ['about', 'lahacks', 'juggle', 'bruinbash', 'ageago', 'localsonly', 'sozo'],
+            anchors: ['about', 'deckster', 'lahacks', 'juggle', 'bruinbash', 'ageago', 'localsonly', 'sozo'],
             //        navigation: false,
             //        navigationPosition: 'right',
             //        navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -144,7 +144,7 @@ $(document).ready(function() {
             controlArrows: true,
             verticalCentered: true,
             resize: true,
-            sectionsColor: ['#1a1a1a', '#3F3F3F', '#14A697', '#1584B7', '#f2bb13', '#F29D35', '#f25151'],
+            sectionsColor: ['#1a1a1a', '#2d2d2d', '#3F3F3F', '#14A697', '#1584B7', '#f2bb13', '#F29D35', '#f25151'],
             paddingTop: '80px',
             //        paddingBottom: '0px',
             //        fixedElements: '#header, .footer',
