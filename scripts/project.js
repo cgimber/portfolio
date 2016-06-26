@@ -63,19 +63,21 @@ $(document).ready(function() {
     if (touchSupport)
         $('html').addClass('touchSupport');
 
-    $('.project-carousel').slick({
-        infinite: true,
-        speed: 1000,
-        arrows: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: false,
-        fade: true,
-        cssEase: 'linear'
-    });
+    if ($('.project-carousel').length >= 1) { // if there are carousel elements,
+        $('.project-carousel').slick({ // init slick
+            infinite: true,
+            speed: 1000,
+            arrows: false,
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            pauseOnHover: false,
+            fade: true,
+            cssEase: 'linear'
+        });
+    }
 
     $('ul#section-links a').removeClass('active');
     $('#work-link').addClass('active');
