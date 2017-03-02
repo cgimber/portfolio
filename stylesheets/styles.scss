@@ -3,10 +3,10 @@
 /* fonts
 ---------------------------------------------------------------------*/
 
-@include font-face('audimat', '../fonts/audimat-regular-webfont', $file-formats: woff2 woff ttf eof);
-@include font-face('audimat', '../fonts/audimat-bold-webfont', bold, $file-formats: woff2 woff ttf eof);
-@include font-face('audimat', '../fonts/audimat-italic-webfont', normal, italic, $file-formats: woff2 woff ttf eof);
-@include font-face('audimat', '../fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: woff2 woff ttf eof);
+@include font-face('audimat', '../fonts/audimat-regular-webfont', $file-formats: woff2 woff ttf eot);
+@include font-face('audimat', '../fonts/audimat-bold-webfont', bold, $file-formats: woff2 woff ttf eot);
+@include font-face('audimat', '../fonts/audimat-italic-webfont', normal, italic, $file-formats: woff2 woff ttf eot);
+@include font-face('audimat', '../fonts/audimat-bolditalic-webfont', bold, italic, $file-formats: woff2 woff ttf eot);
 
 /* colors
 ---------------------------------------------------------------------*/
