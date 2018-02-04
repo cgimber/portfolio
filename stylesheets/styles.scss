@@ -122,7 +122,7 @@ h4,
 h5,
 h6,
 p {
-    @include transition(font-size .5s ease-in-out, line-height .5s ease-in-out);
+    @include transition(font-size .125s ease-in-out, line-height .125s ease-in-out);
 }
 
 a {
@@ -347,14 +347,17 @@ html.isMobile .section .gallery {
 ---------------------------------------------------------------------*/
 
 .section-about {
-    padding: 0 8rem;
+    width: 100%;
+    max-width: 890px;
+    margin: 0 auto;
     color: white;
     @include transition(padding .5s ease-in-out);
 }
 
 .greetings {
+    font-size: 7rem;
     text-align: left;
-    line-height: 1.5em;
+    line-height: 1.25em;
 }
 
 .greetings__line-break {
@@ -398,6 +401,7 @@ a.underline-resume {
 // }
 #resume {
     text-align: left;
+    font-weight: normal;
 }
 
 #tooltip {
@@ -981,6 +985,9 @@ html.isMobile .directions-container {
 }
 
 @media all and (max-width: 1122px) {
+    .section-about {
+        max-width: 635px;
+    }
     .greetings {
         font-size: 5rem;
     }
@@ -1005,6 +1012,9 @@ html.isMobile .directions-container {
 }
 
 @media all and (max-width: 962px) {
+    .section-about {
+        max-width: 510px;
+    }
     .greetings {
         font-size: 4rem;
     }
@@ -1149,12 +1159,6 @@ html.isMobile .directions-container {
 @media all and (max-width: 375px) {
     .section-about {
         padding: 0 2rem;
-    }
-    .greetings {
-        font-size: 2.5rem;
-    }
-    #resume {
-        font-size: 1.875rem;
     }
     .gallery-cell {
         padding: 0 2rem;

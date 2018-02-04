@@ -104,9 +104,9 @@ h4,
 h5,
 h6,
 p {
-  -webkit-transition: font-size 0.5s ease-in-out, line-height 0.5s ease-in-out;
-  -moz-transition: font-size 0.5s ease-in-out, line-height 0.5s ease-in-out;
-  transition: font-size 0.5s ease-in-out, line-height 0.5s ease-in-out; }
+  -webkit-transition: font-size 0.125s ease-in-out, line-height 0.125s ease-in-out;
+  -moz-transition: font-size 0.125s ease-in-out, line-height 0.125s ease-in-out;
+  transition: font-size 0.125s ease-in-out, line-height 0.125s ease-in-out; }
 
 a {
   -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, opacity 0.25s ease-in-out, border-bottom 0.25s ease-in-out;
@@ -286,15 +286,18 @@ html.isMobile .section .gallery {
 /* desktop
 ---------------------------------------------------------------------*/
 .section-about {
-  padding: 0 8rem;
+  width: 100%;
+  max-width: 890px;
+  margin: 0 auto;
   color: white;
   -webkit-transition: padding 0.5s ease-in-out;
   -moz-transition: padding 0.5s ease-in-out;
   transition: padding 0.5s ease-in-out; }
 
 .greetings {
+  font-size: 7rem;
   text-align: left;
-  line-height: 1.5em; }
+  line-height: 1.25em; }
 
 .greetings__line-break {
   display: none; }
@@ -318,7 +321,8 @@ a.underline-resume:hover, a.underline-resume:active {
   color: black; }
 
 #resume {
-  text-align: left; }
+  text-align: left;
+  font-weight: normal; }
 
 #tooltip {
   display: none;
@@ -922,6 +926,9 @@ html.isMobile .directions-container {
   .page-wrap {
     min-height: 100%; } }
 @media all and (max-width: 1122px) {
+  .section-about {
+    max-width: 635px; }
+
   .greetings {
     font-size: 5rem; }
 
@@ -940,6 +947,9 @@ html.isMobile .directions-container {
     top: 50%;
     right: 2rem; } }
 @media all and (max-width: 962px) {
+  .section-about {
+    max-width: 510px; }
+
   .greetings {
     font-size: 4rem; }
 
@@ -1063,12 +1073,6 @@ html.isMobile .directions-container {
 @media all and (max-width: 375px) {
   .section-about {
     padding: 0 2rem; }
-
-  .greetings {
-    font-size: 2.5rem; }
-
-  #resume {
-    font-size: 1.875rem; }
 
   .gallery-cell {
     padding: 0 2rem; }
