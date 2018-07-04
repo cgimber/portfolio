@@ -79,6 +79,8 @@ $(document).ready(function() {
         });
     }
 
+    $('iframe.yt-autoplay')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+
     $('ul#section-links a').removeClass('active');
     $('#work-link').addClass('active');
 
